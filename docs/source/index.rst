@@ -15,7 +15,7 @@ Quickstart
 
 1. Install dexsuite via pip:
 
-   .. code-block::
+   .. code-block:: shell
       pip install dexsuite
 
 2. Check for dependencies:
