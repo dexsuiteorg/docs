@@ -3,12 +3,29 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-dexsuite documentation
-======================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+======================
+Official Dexsuite documentation
+======================
+This is the Official Documentation for Dexsuite, an open-source library for robotic task reinforcement learning.
+
+
+Quickstart
+==========
+
+1. Install dexsuite via pip:
+
+   .. code-block::
+      pip install dexsuite
+
+2. Check for dependencies:
+
+   - torch
+   - genesis-world
+   - gynasium
+
+Code base
+==========
 
 
 .. toctree::
