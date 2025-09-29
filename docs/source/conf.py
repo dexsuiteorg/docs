@@ -17,6 +17,7 @@ exclude_patterns = []
 html_theme = "pydata_sphinx_theme"
 
 html_static_path = ["_static"]  # keep, even if empty, to add versions.json/logo later
+html_css_files = ["css/custom.css"]
 
 # Repo / "Edit on GitHub" button
 html_theme_options = {
