@@ -13,13 +13,15 @@ User Guide
    :caption: Overview
    :maxdepth: 1
 
-   overview/dexsuite_project_architecture
-   overview/states
+   overview/api_overview
+   overview/environments
+   overview/robots
+   overview/controllers
+   overview/workspace_layout
+   overview/cameras_sensors
+   overview/models
    overview/configuration_system
-   overview/handlers
-   overview/task_system
-   overview/custom_extra_observations
-   overview/randomization
+   overview/teleoperation
 
 .. toctree::
    :caption: Features
