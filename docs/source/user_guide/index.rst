@@ -24,6 +24,20 @@ User Guide
    overview/teleoperation
 
 .. toctree::
+   :caption: How-tos
+   :maxdepth: 1
+   :hidden:
+
+   how_tos/new_robot
+   how_tos/new_environment
+   how_tos/new_camera
+   how_tos/spacemouse
+   how_tos/vive_controller
+   how_tos/manus_glove
+   how_tos/hopejr_glove
+   how_tos/dexpilot
+
+.. toctree::
    :caption: Features
    :maxdepth: 1
 
