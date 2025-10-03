@@ -1,4 +1,4 @@
 .. include:: ../_shared_nav.rst
-robots
+Robots
 ====================
 (Coming soon.)
