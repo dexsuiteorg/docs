@@ -2,20 +2,12 @@ User Guide
 ==========
 
 .. toctree::
-   :caption: Installation
-   :maxdepth: 1
-
-   installation/prerequisites
-   installation/direct_installation
-   installation/docker
-   .. installation/advanced
-
-.. toctree::
    :caption: Getting Started
    :maxdepth: 1
 
-   getting_started/quick_start
-   getting_started/advanced
+   getting_started/installation
+   getting_started/run_a_simple_demo
+   getting_started/keyboard_teleoperation
 
 .. toctree::
    :caption: Overview

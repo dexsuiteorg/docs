@@ -23,15 +23,15 @@ html_css_files = ["css/custom.css"]
 html_theme_options = {
     "logo": {
         # drop your SVG/PNG into _static and point here (optional for now)
-        # "image_light": "dexsuite-logo-light.png",
-        # "image_dark": "dexsuite-logo-dark.png",
+        "image_light": "dexsuite-logo-light.png",
+        "image_dark": "dexsuite-logo-dark.png",
         "text": "Dexsuite",
     },
     "use_edit_page_button": True,
     "show_prev_next": False,
 
     # Version switcher (placeholder); provide _static/versions.json later
-    "navbar_end": ["version-switcher", "navbar-icon-links"],
+    "navbar_end": ["version-switcher", "navbar-icon-links", "theme-switcher"],
     "switcher": {
         "json_url": "_static/versions.json",
         "version_match": release,
