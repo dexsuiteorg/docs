@@ -3,6 +3,16 @@
 API Overview
 ====================
 
+
+# API Overview
+
+The Dexsuite API is designed for users from different technical background. 
+It handles a sprectrum of: one made very intuitively so that most parameters are handled by the program, 
+and one made for experts, so that they can customize their own environment settings. 
+
+Notes: Let's call it a spectrum rather than two modes 
+
+
 This page gives you the shape of Dexsuite: how to construct an environment, what
 ``reset()`` / ``step()`` return, how actions are structured (single-arm and bimanual),
 and how cameras, controllers, teleoperation, and learning stacks plug in. More details 
@@ -15,6 +25,36 @@ will reveal as walking through the subsequent sections.
 
 One-Minute Quickstart
 ---------------------
+
+.. rubric:: Explanation
+
+This mode allows you to use Dexsuite without worrying about the whole range of options that needs to be set. The basic API will be sufficient for the majority of users and applications, and is great if you are a beginner with the API.
+
+.. rubric:: How to use
+
+To run the basic API, just run :code:`ds.make(<<options>>)`, where options can be the following parameters:
+
+-   :code:`args`
+-   (other parameters, if any)
+
+The :code:`make()` function will automatically convert the arguments into presets, and will build the environment based on that.
+
+.. rubric:: Example
+
+.. code-block:: python
+
+    import dexsuite as ds
+
+    # --- Minimal environment creation ---
+    env = ds.make("reach", manipulator="franka_with_gripper", arm_control="osc_pose")
+
+    obs = env.reset()
+    for t in range(200):
+        action = env.action_space.sample()
+        obs, reward, done, info = env.step(action)
+    env.close()
+
+
 
 .. code-block:: python
 
@@ -72,6 +112,47 @@ portable.
 becomes true on time/out-of-horizon. ``info["success"]`` is provided.
 
 
+structure
+---------
+
+We will now go over the general structure behind the Dexsuite API, how each component interacts with each other, and how they work together.
+
+.. figure:: architecture
+    :alt: Diagram of the Dexsuite API architecture.
+
+.. container::
+
+    .. rubric:: Simulation
+
+    The simulation part contains all general information about the environment that you want to create. Here you can define the control frequency, the horizon, the simulation speed, and the number of parallel environments.
+
+    *What it contains*
+
+    -   Options
+    -   Args
+
+.. container::
+
+    .. rubric:: Robot
+
+    Robot is probably the most complex part of the system. It describes the grippers and manipulators you want to use for your simulation, their initial position and orientation, their controllers, and their axis aligned boundary box. You also have the choice to have either a single arm setting, or a bimanual setting with two arms.
+
+    *What it contains*
+
+    -   Options
+    -   Args
+
+.. container::
+
+    .. rubric:: Camera
+
+    The camera contains everything related to the points of view that you want to have on your simulation. It can be both static cameras, or dynamic cameras, i.e. cameras mounted on your robot. You also have the option to choose which output format you want for your cameras. It can be regular RGB, or it can be depth, segmentation or normal.
+
+    *What it contains*
+
+    -   Options
+    -   Args
+
 Observations
 ------------
 
@@ -124,6 +205,94 @@ Controllers translate normalized commands into low-level actuation:
 
 All controllers observe the same normalization convention (``[-1, 1]``) so
 teleoperation, scripted agents, and RL policies can share code.
+
+Basic API
+---------
+.. rubric:: Explanation
+
+This mode allows you to use Dexsuite without worrying about the whole range of options that needs to be set. The basic API will be sufficient for the majority of users and applications, and is great if you are a beginner with the API.
+
+.. rubric:: How to use
+
+To run the basic API, just run :code:`ds.make(<<options>>)`, where options can be the following parameters:
+
+-   :code:`args`
+-   (other parameters, if any)
+
+The :code:`make()` function will automatically convert the arguments into presets, and will build the environment based on that.
+
+.. rubric:: Example
+
+.. code-block:: python
+
+    import dexsuite as ds
+
+    # --- Minimal environment creation ---
+    env = ds.make("reach", manipulator="franka_with_gripper", arm_control="osc_pose")
+
+    obs = env.reset()
+    for t in range(200):
+        action = env.action_space.sample()
+        obs, reward, done, info = env.step(action)
+    env.close()
+
+Advanced API
+------------
+
+.. rubric:: Explanation
+
+In the custom API settings, you can select manually a variety of parameters for your environment, bringing Dexsuite to its full potential. It is useful for all cases that the default environments does not satisfy, whether it is about the number of parallel environments, the robot's controller type, or the rendering mode of the camera.
+
+.. rubric:: How to use
+
+Instead of passing arguments into :code:`ds.make()`, we pass three dataclasses containing all information about the environment we want to produce. The three dataclasses are:
+
+-   :code:`SimOptions`: Contains general settings about the simulation
+-   :code:`RobotOptions`: Contains information about the robot(s) we are using
+-   :code:`CameraOptions`: Contains information about the static and dynamic cameras used to get observations
+
+.. rubric:: Examples
+
+.. code-block:: python
+
+    from dexsuite.options import RobotOptions, SimOptions, CamOptions
+    import dexsuite as ds
+
+    # --- Define robot configuration ---
+    robot_opt = RobotOptions(
+        manipulator="franka_with_gripper",
+        arm_control="osc_pose",
+        gripper_control="joint_position",
+        physics="mujoco",
+        control_hz=100,
+    )
+
+    # --- Define simulation parameters ---
+    sim_opt = SimOptions(
+        render=True,
+        control_hz=100,
+        gravity=(0, 0, -9.81),
+        headless=False,
+    )
+
+    # --- Define cameras ---
+    cameras_opt = CamOptions(
+        static={
+            "front": {"pos": (1.2, 0, 0.5), "lookat": (0, 0, 0)},
+            "side": {"pos": (0, 0.7, 0.5), "lookat": (0, 0, 0)},
+        },
+        resolution=(640, 480),
+        depth=True,
+    )
+
+    # --- Build the environment ---
+    env = ds.make(
+        robot=robot_opt,
+        sim=sim_opt,
+        cameras=cameras_opt,
+    )
+
+    obs = env.reset()
 
 
 Cameras & Rendering
