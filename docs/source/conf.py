@@ -29,6 +29,7 @@ html_theme_options = {
     },
     "use_edit_page_button": True,
     "show_prev_next": False,
+    "show_nav_level": 0,
 
     # Version switcher (placeholder); provide _static/versions.json later
     "navbar_end": ["version-switcher", "navbar-icon-links", "theme-switcher"],

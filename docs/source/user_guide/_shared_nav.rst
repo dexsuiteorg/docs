@@ -1,6 +1,6 @@
 .. toctree::
    :caption: Installation
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
    installation/prerequisites
@@ -10,7 +10,7 @@
 
 .. toctree::
    :caption: Getting Started
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
    getting_started/quick_start
@@ -18,7 +18,7 @@
 
 .. toctree::
    :caption: Overview
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
    overview/api_overview
@@ -30,10 +30,11 @@
    overview/models
    overview/configuration_system
    overview/teleoperation
+   overview/walkthrough
 
 .. toctree::
    :caption: How-tos
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
    
    how_tos/new_robot

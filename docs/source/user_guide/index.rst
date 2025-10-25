@@ -3,7 +3,7 @@ User Guide
 
 .. toctree::
    :caption: Getting Started
-   :maxdepth: 1
+   :maxdepth: 2
 
    getting_started/installation
    getting_started/run_a_simple_demo
@@ -11,7 +11,7 @@ User Guide
 
 .. toctree::
    :caption: Overview
-   :maxdepth: 1
+   :maxdepth: 3
 
    overview/api_overview
    overview/environments
@@ -22,10 +22,11 @@ User Guide
    overview/models
    overview/configuration_system
    overview/teleoperation
+   overview/walkthrough
 
 .. toctree::
    :caption: How-tos
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
 
    how_tos/new_robot
@@ -39,6 +40,6 @@ User Guide
 
 .. toctree::
    :caption: Features
-   :maxdepth: 1
+   :maxdepth: 2
 
    features/run_in_parallel
