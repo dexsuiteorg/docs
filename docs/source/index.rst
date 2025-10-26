@@ -2,7 +2,7 @@
 Dexsuite Documentation
 ===========================
 
-Welcome to Dexsuite — an open-source library for robotic task reinforcement learning.
+Welcome to Dexsuite — an open-source robot learning simulation framework for dexterity.
 
 .. toctree::
    :caption: User Guide
@@ -38,3 +38,4 @@ Welcome to Dexsuite — an open-source library for robotic task reinforcement le
    :hidden:
 
    faq/index
+

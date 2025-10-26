@@ -22,9 +22,9 @@
    :hidden:
 
    overview/api_overview
-   overview/environments
-   overview/robots
-   overview/controllers
+   overview/environment
+   overview/robot
+   overview/controller
    overview/workspace_layout
    overview/cameras_sensors
    overview/models
