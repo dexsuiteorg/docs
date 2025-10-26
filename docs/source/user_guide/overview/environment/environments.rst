@@ -1,4 +1,4 @@
-.. include:: ../_shared_nav.rst
+.. include:: ../../_shared_nav.rst
 Environments
 ====================
 In DexSuite, environments are structured around two core concepts: the **Base Environment** and the **Task**. The **Base Environment** (`BaseEnv`) takes care of setting up the simulator, robot, cameras, batching, and device management—essentially handling all the underlying infrastructure that makes the simulation run smoothly. On the other hand, the **Task** defines the specific logic that makes each environment unique, including how the scene is populated, how episodes begin, how observations and rewards are computed, and when the task succeeds or fails.

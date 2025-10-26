@@ -1,4 +1,4 @@
-.. include:: ../_shared_nav.rst
+.. include:: ../../_shared_nav.rst
 Available Environments
 
 .. list-table:: Default Environments
