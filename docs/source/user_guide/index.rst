@@ -14,7 +14,7 @@ User Guide
    :maxdepth: 3
 
    overview/api_overview
-   overview/environments
+   overview/environment
    overview/robots
    overview/controllers
    overview/workspace_layout

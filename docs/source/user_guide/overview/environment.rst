@@ -7,5 +7,5 @@ Environment
    :maxdepth: 1
    :hidden:
 
-   environment/environments
-   walkthrough/available_envs
+   environment/environment
+   environment/available_envs

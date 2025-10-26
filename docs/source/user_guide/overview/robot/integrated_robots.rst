@@ -1,4 +1,4 @@
 .. include:: ../../_shared_nav.rst
-RL Problem Statement
+Integrated Robot
 ====================
 (Coming soon.)
