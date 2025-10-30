@@ -116,7 +116,7 @@ This page lists the robots, manipulators, and grippers available by default in D
      - Robotiq 2F-85 parallel gripper.
      - 1
    * - ``schunk``
-     - .. image:: ../../../_static/Schunk_right45.png
+     - .. image:: ../../../_static/schunk_right45.png
      - Schunk SVH right hand gripper.
      - 9
    * - ``shadow``
