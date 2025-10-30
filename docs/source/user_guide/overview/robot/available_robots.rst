@@ -7,7 +7,7 @@ This page lists the robots, manipulators, and grippers available by default in D
 
 
 .. list-table:: Default Robots
-   :widths: 20 40 30 30
+   :widths: 20 40 40 10
    :header-rows: 1
 
    * - Name
@@ -15,12 +15,12 @@ This page lists the robots, manipulators, and grippers available by default in D
      - Description
      - DOF
    * - Gripper1
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../source/_static/image1.png
           :width: 150
      - Simple parallel gripper that opens and closes.
      - 1
    * - Manipulator1
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../source/_static/image1.png
           :width: 150
      - Robotic arm.
      - 6
@@ -35,47 +35,47 @@ This page lists the robots, manipulators, and grippers available by default in D
      - Description
      - DOF
    * - ``franka``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/image1.png
      - Franka Emika Panda research arm (manipulator only).
      - 7
    * - ``franka_fr3``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/franka_fr3_right45.png
      - Franka Emika FR3 research arm (manipulator only).
      - 7
    * - ``gen3``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/gen3_right45.png
      - Kinova Gen3 research arm (manipulator only).
      - 7
    * - ``gen3_lite``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/gen3_lite_right45.png
      - Kinova Gen3 Lite manipulator with integrated gripper.
      - 10
    * - ``kuka``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/kuka_right45.png
      - Kuka LBR iiwa 14 arm (manipulator only).
      - 7
    * - ``link6``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/image1.png
      - Link6 FR3 research arm (manipulator only).
      - 6
    * - ``so_100``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/so_100_right45.png
      - SO Arm 100 with rotary single-jaw gripper.
      - 6
    * - ``trossen_vx250s``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/trossen_wx250s_right45.png
      - Trossen WX250S manipulator with integrated gripper.
      - 8
    * - ``trossen_vx300s``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/trossen_vx300s_right45.png
      - Trossen VX300S manipulator with integrated gripper.
      - 8
    * - ``ur10``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/ur10_right45.png
      - Universal Robots UR-10e arm only (manipulator only).
      - 6
    * - ``ur5``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/image1.png
      - Universal Robots UR-5e arm (manipulator only).
      - 6
 
@@ -88,43 +88,43 @@ This page lists the robots, manipulators, and grippers available by default in D
      - Description
      - DOF
    * - ``ability``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/ability_right45.png
      - Ability right hand gripper.
      - 6
    * - ``allegro``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/allegro_right45.png
      - Allegro dexterous hand gripper.
      - 16
    * - ``barrett``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/barrett_right45.png
      - Barette hand gripper.
      - 8
    * - ``dclaw``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/dclaw_right45.png
      - D claw gripper.
      - 9
    * - ``inspire``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/inspire_right45.png
      - Inspire right hand gripper.
      - 6
    * - ``leap``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/leap_right45.png
      - Leap dexterous right hand gripper.
      - 16
    * - ``robotiq``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/robotiq_right45.png
      - Robotiq 2F-85 parallel gripper.
      - 1
    * - ``schunk``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/Schunk_right45.png
      - Schunk SVH right hand gripper.
      - 9
    * - ``shadow``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/shadow_right45.png
      - Shadow right hand gripper.
      - 20
    * - ``umi``
-     - .. image:: ../../../source/_static/image1.jpg
+     - .. image:: ../../../_static/umi_right45.png
      - Umi gripper.
      - 1
 
