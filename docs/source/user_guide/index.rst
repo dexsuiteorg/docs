@@ -37,6 +37,7 @@ User Guide
    how_tos/manus_glove
    how_tos/hopejr_glove
    how_tos/dexpilot
+   how_tos/lerobot
 
 .. toctree::
    :caption: Features
