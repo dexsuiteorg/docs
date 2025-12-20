@@ -1,5 +1,3 @@
-.. include:: ../_shared_nav.rst
-
 Installation
 ============
 
@@ -54,7 +52,7 @@ If `OpenGL renderer` shows **llvmpipe** or generic **Mesa** software, your OpenG
 Direct Installation
 -------------------
 
-Option A — PyPI
+Option A: PyPI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -66,7 +64,7 @@ Option A — PyPI
 
    pip install dexsuite
 
-Option B — From source (editable install)
+Option B: From source (editable install)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
@@ -87,15 +85,15 @@ Input Devices
 
 Dexsuite supports multiple input devices. Have at least one of these connected:
 
-- **Keyboard** — Works out of the box. See :doc:`Keyboard Teleoperation <../getting_started/keyboard_teleoperation>`.
-- **SpaceMouse (3Dconnexion)** — Plug-and-play on most Ubuntu setups. If needed, install the daemon:
+- **Keyboard**: Works out of the box. See :doc:`Keyboard Teleoperation <../getting_started/keyboard_teleoperation>`.
+- **SpaceMouse (3Dconnexion)**: Plug-and-play on most Ubuntu setups. If needed, install the daemon:
 
   .. code-block:: bash
 
      sudo apt install spacenavd
      sudo systemctl enable --now spacenavd
 
-- **Manus gloves** — Install the vendor runtime/driver per Manus documentation and ensure the device is detected by the system.
+- **Manus gloves**: Install the vendor runtime/driver per Manus documentation and ensure the device is detected by the system.
 
 Verify the Installation
 -----------------------

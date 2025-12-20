@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" role="img" aria-label="Environment image placeholder">
+  <rect x="0" y="0" width="800" height="450" fill="#f3f4f6"/>
+  <rect x="24" y="24" width="752" height="402" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <g fill="#111827" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+    <text x="50%" y="46%" text-anchor="middle" font-size="28" font-weight="600">Environment image</text>
+    <text x="50%" y="56%" text-anchor="middle" font-size="18" fill="#374151">Placeholder (drop your screenshot later)</text>
+  </g>
+</svg>

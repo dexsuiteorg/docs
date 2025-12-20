@@ -22,21 +22,14 @@ html_css_files = ["css/custom.css"]
 # Repo / "Edit on GitHub" button
 html_theme_options = {
     "logo": {
-        # drop your SVG/PNG into _static and point here (optional for now)
-        "image_light": "dexsuite-logo-light.png",
-        "image_dark": "dexsuite-logo-dark.png",
         "text": "Dexsuite",
     },
     "use_edit_page_button": True,
     "show_prev_next": False,
     "show_nav_level": 0,
 
-    # Version switcher (placeholder); provide _static/versions.json later
-    "navbar_end": ["version-switcher", "navbar-icon-links", "theme-switcher"],
-    "switcher": {
-        "json_url": "_static/versions.json",
-        "version_match": release,
-    },
+    # Keep the header simple for local builds (no version switcher dropdown).
+    "navbar_end": ["navbar-icon-links", "theme-switcher"],
 
     # Right-side icon links
     "icon_links": [

@@ -8,6 +8,7 @@ User Guide
    getting_started/installation
    getting_started/run_a_simple_demo
    getting_started/keyboard_teleoperation
+   getting_started/environment_builders
 
 .. toctree::
    :caption: Overview

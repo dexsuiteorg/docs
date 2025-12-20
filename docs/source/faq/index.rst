@@ -1,5 +1,7 @@
-:orphan:
 FAQ
 ===
 
-(Coming soon.) Frequently asked questions.
+.. toctree::
+   :maxdepth: 1
+
+   building_docs

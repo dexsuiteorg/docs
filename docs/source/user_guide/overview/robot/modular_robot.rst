@@ -1,28 +1,44 @@
-.. include:: ../../_shared_nav.rst
-
 Modular Robots
-================
+==============
 
 .. _modular_robots:
 
-Modular Robots are the most common and flexible robot type. They are defined as a collection of separate components that are "fused" together at runtime. This design allows for maximum reusability, as different grippers can be easily swapped and attached to different manipulators.
+Modular robots are built from two separate models:
 
-A Modular Robot is composed of three distinct parts.
+* a manipulator (arm)
+* a gripper (hand)
 
-Modular Manipulator
-^^^^^^^^^^^^^^^^^^^^^
-The arm itself, which does not include a gripper (e.g., a UR-5 or Franka arm).
+DexSuite mounts the gripper onto the manipulator at build time using an adapter
+definition (a fixed pose offset).
 
-(Coming Soon)
+.. image:: ../../../_static/placeholder_robot.svg
+   :width: 420
 
-Gripper
-^^^^^^^
-The end-effector, defined in its own file (e.g., a Robotiq 2F-85).
+Quickstart
+----------
 
-(Coming Soon)
+.. code-block:: python
 
-Gripper Mount
-^^^^^^^^^^^^^^^
-A realistic adapter piece (optional) that defines the precise attachment offset between the arm's wrist and the gripper's base. This can be defined as an invisible offset or as a visible shape (like a cylinder).
+   import dexsuite as ds
 
-(Coming Soon)
+   env = ds.make(
+       "lift",
+       manipulator="franka",
+       gripper="robotiq",
+       arm_control="osc_pose",
+       gripper_control="joint_position",
+       render_mode="human",
+   )
+
+   obs, info = env.reset()
+
+What happens under the hood
+---------------------------
+
+* DexSuite loads the manipulator model (for example ``franka``).
+* DexSuite loads the gripper model (for example ``robotiq``).
+* DexSuite looks up an adapter for that manipulator+gripper pair.
+* The two simulation entities are linked together with a fixed mount.
+
+If an adapter is missing, DexSuite raises a clear error listing which grippers
+are available for that manipulator.

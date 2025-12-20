@@ -1,9 +1,9 @@
-.. include:: ../_shared_nav.rst
-
 Run a Simple Demo
 =================
 
-This demo launches a **Franka + Robotiq** setup that automatically stacks one cube on another and then exits.
+This demo launches a **Franka + Robotiq** setup in the ``stack`` environment and
+steps the simulation for a short rollout. It’s meant as a quick sanity check
+that your install + rendering works.
 
 Run
 ---
@@ -20,12 +20,11 @@ Expected result
 ---------------
 
 - A window opens with the Franka arm and two cubes.
-- The agent stacks the top cube onto the base cube.
-- On success, the program terminates and prints:
+- The script steps the environment for a few seconds and prints:
 
 .. code-block:: text
 
-   ✅ Dexsuite is good to go!
+   Dexsuite is good to go!
 
 Next
 ----

@@ -1,5 +1,4 @@
 .. _robot:
-.. include:: ../_shared_nav.rst
 
 Robots
 ====================

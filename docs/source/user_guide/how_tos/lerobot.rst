@@ -1,14 +1,8 @@
-.. include:: ../_shared_nav.rst
 Lerobot setup
 ======================================================
 
 SO101 WebSim Follower + DexSuite Teleoperation
-..
-  NOTE: Using list-tables for high-level summaries is common in reST documentation.
-
-.. container::
-
-.. container:: summary
+----------------------------------------------
 
 .. rubric:: Summary (High-Level)
 
@@ -42,7 +36,7 @@ SO101 WebSim Follower + DexSuite Teleoperation
 
 ## 1. Get the Code
 
-### Option A — Use the fork (quick start)
+### Option A: Use the fork (quick start)
 
 .. code-block:: bash
 
@@ -51,7 +45,7 @@ SO101 WebSim Follower + DexSuite Teleoperation
 
 This repo already contains the :code:`so101_websim_follower` integration.
 
-### Option B — Integrate into a fresh LeRobot repo
+### Option B: Integrate into a fresh LeRobot repo
 
 1. Clone official LeRobot:
 
@@ -167,7 +161,7 @@ Replace :code:`<your_lerobot_env>` with your actual environment name.
 
 Open a **new terminal**, activate the env, and run **one** of these:
 
-### Option 1 — Server under :code:`so101_websim_follower`
+### Option 1: Server under :code:`so101_websim_follower`
 
 From the repo root:
 
@@ -177,7 +171,7 @@ From the repo root:
 
     python lerobot/src/lerobot/robots/so101_websim_follower/server_test/sim_ws_server.py
 
-### Option 2 — Example server script
+### Option 2: Example server script
 
 .. code-block:: bash
 
@@ -320,8 +314,6 @@ Now that the test pipeline works, switch to DexSuite.
 
 Once everything is configured and running:
 
-.. container:: flow-chart
-
 .. parsed-literal::
 
     SO101 leader arm (hardware)
@@ -330,4 +322,4 @@ Once everything is configured and running:
              → WebSocket (ws://127.0.0.1:8765)
                 → DexSuite WebSim (sim_websim_so100.py)
 
-You now have a **leader–follower teleoperation setup** with a **virtual SO101 WebSim follower** inside DexSuite.
+You now have a **leader-follower teleoperation setup** with a **virtual SO101 WebSim follower** inside DexSuite.
