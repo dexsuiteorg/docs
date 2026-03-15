@@ -11,7 +11,7 @@ This page explains the public DexSuite surface:
 - The two configuration styles (flat vs component options)
 - Tools that help you generate configs (HTML builder and interactive builder)
 
-.. image:: ../../_static/placeholder_env.svg
+.. image:: ../../assets/overview.png
    :width: 520
 
 Quickstart (flat API)

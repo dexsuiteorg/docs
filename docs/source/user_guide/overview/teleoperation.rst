@@ -10,7 +10,7 @@ This is useful for:
 - Exploring tasks before training
 - Collecting demonstrations (if you want to build an imitation dataset)
 
-.. image:: ../../_static/placeholder_env.svg
+.. image:: ../../assets/teleoperation_devices.png
    :width: 720
 
 Two ways to teleoperate
@@ -40,9 +40,6 @@ Run later from an existing spec:
 
    python -m dexsuite.interactive_builder run --config dexsuite_builder_spec.json --input keyboard
 
-.. image:: ../../_static/placeholder_env.svg
-   :width: 720
-
 Supported input devices
 -----------------------
 
@@ -53,6 +50,9 @@ The runner supports these input names:
 - ``vive_controller`` (requires ``openvr``)
 - ``vive_tracker`` (requires ``openvr``)
 - ``none`` (sends zero actions)
+
+.. image:: ../../assets/retargeting.png
+   :width: 720
 
 Controller compatibility
 ------------------------

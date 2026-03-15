@@ -15,34 +15,13 @@ observations for learning and evaluation.
    user_guide/index
 
 .. toctree::
-   :caption: Dataset and Benchmark
-   :maxdepth: 2
-   :hidden:
-
-   datasets/index
-
-.. toctree::
-   :caption: Dexsuite Learn
-   :maxdepth: 1
-   :hidden:
-
-   learn/index
-
-.. toctree::
-   :caption: API
-   :maxdepth: 2
-   :hidden:
-
-   api/index
-
-.. toctree::
    :caption: FAQ
    :maxdepth: 1
    :hidden:
 
    faq/index
 
-.. image:: _static/placeholder_env.svg
+.. image:: assets/concept.png
    :width: 720
 
 Start here

@@ -19,6 +19,9 @@ SO101 WebSim Follower + DexSuite Teleoperation
    * - 4.
      - **DexSuite:** Kill test server & teleop, run :code:`sim_websim_so100.py` in DexSuite, run :code:`lerobot-teleoperate` again pointing to same WS URL.
 
+.. image:: ../../assets/droid.png
+   :width: 720
+
 ---
 
 .. _prerequisites:

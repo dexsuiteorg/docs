@@ -67,35 +67,16 @@ lands in world coordinates.
 
 See :doc:`Workspace Layout <workspace_layout>` for how layout presets work.
 
+Task Catalog
+------------
+
+Use the catalog page to browse all registered tasks and jump to the task pages
+that have their own detailed writeups.
+
+- :doc:`Available Environments <environment/available_envs>`
+
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    environment/available_envs
-   environment/lift
-   environment/reach
-   environment/push
-   environment/pick_place
-   environment/stack
-   environment/make_coffee
-   environment/pick_place_mug
-   environment/pick_place_pan
-   environment/drill_to_point
-   environment/cable_routing
-   environment/cut_butter
-   environment/rotatedice
-   environment/foldshirt
-   environment/pour_water
-   environment/spready_butter
-   environment/mpm_sponge_drop
-   environment/bimanual_reach
-   environment/bimanual_lift
-   environment/bimanual_push
-   environment/bimanual_pick_place
-   environment/bimanual_stack
-   environment/bimanual_make_coffee
-   environment/bimanual_pick_place_mug
-   environment/bimanual_pick_place_pan
-   environment/bimanual_pick_place_pot
-   environment/bimanual_fold_glasses
-   environment/bimanual_drill_to_point

@@ -6,7 +6,7 @@ Workspace layout answers two questions:
 1) Where is the robot base placed in the world?
 2) Given that base pose, what region of space is considered "in-bounds" for the robot?
 
-.. image:: ../../_static/placeholder_robot.svg
+.. image:: ../../assets/aabb.png
    :width: 520
 
 Robot base placement

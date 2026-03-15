@@ -193,3 +193,35 @@ Bimanual Rigid Tasks
      - .. image:: ../../../_static/placeholder_env.svg
           :width: 260
      - Fold glasses.
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   lift
+   reach
+   push
+   pick_place
+   stack
+   make_coffee
+   pick_place_mug
+   pick_place_pan
+   drill_to_point
+   cable_routing
+   cut_butter
+   rotatedice
+   foldshirt
+   pour_water
+   spready_butter
+   mpm_sponge_drop
+   bimanual_reach
+   bimanual_lift
+   bimanual_push
+   bimanual_pick_place
+   bimanual_stack
+   bimanual_make_coffee
+   bimanual_pick_place_mug
+   bimanual_pick_place_pan
+   bimanual_pick_place_pot
+   bimanual_fold_glasses
+   bimanual_drill_to_point

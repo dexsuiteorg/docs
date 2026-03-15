@@ -6,6 +6,9 @@ A robot is represented in the simulator by a URDF or MJCF description file. A si
 
 To handle both of these cases cleanly, ``dexsuite`` provides two distinct robot abstractions: **Modular Robots** and **Integrated Robots**. This design allows the framework to correctly apply controllers and manage the robot's kinematics, regardless of how its source files are structured.
 
+.. image:: ../../assets/ModularandIntegrated.png
+   :width: 680
+
 Modular Robots
 ^^^^^^^^^^^^^^^^
 

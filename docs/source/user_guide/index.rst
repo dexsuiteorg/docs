@@ -11,37 +11,29 @@ User Guide
    getting_started/environment_builders
 
 .. toctree::
-   :caption: Overview
-   :maxdepth: 3
+   :caption: Core Concepts
+   :maxdepth: 2
 
    overview/api_overview
-   overview/environment
+   overview/configuration_system
    overview/robots
+   overview/environment
    overview/controllers
    overview/workspace_layout
    overview/cameras_sensors
    overview/models
-   overview/configuration_system
    overview/teleoperation
-   overview/walkthrough
 
 .. toctree::
-   :caption: How-tos
+   :caption: Catalog
    :maxdepth: 2
-   :hidden:
 
-   how_tos/new_robot
-   how_tos/new_environment
+   overview/environment/available_envs
+   overview/robot/available_robots
+
+.. toctree::
+   :caption: How-To
+   :maxdepth: 2
+
    how_tos/new_camera
-   how_tos/spacemouse
-   how_tos/vive_controller
-   how_tos/manus_glove
-   how_tos/hopejr_glove
-   how_tos/dexpilot
    how_tos/lerobot
-
-.. toctree::
-   :caption: Features
-   :maxdepth: 2
-
-   features/run_in_parallel
