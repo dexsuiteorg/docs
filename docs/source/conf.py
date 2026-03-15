@@ -26,7 +26,8 @@ html_theme_options = {
     },
     "use_edit_page_button": True,
     "show_prev_next": False,
-    "show_nav_level": 0,
+    "show_nav_level": 2,
+    "navbar_center": [],
 
     # Keep the header simple for local builds (no version switcher dropdown).
     "navbar_end": ["navbar-icon-links", "theme-switcher"],
@@ -40,6 +41,10 @@ html_theme_options = {
             "type": "fontawesome",
         },
     ],
+}
+
+html_sidebars = {
+    "**": ["search-field.html", "home-sidebar.html"],
 }
 
 html_context = {

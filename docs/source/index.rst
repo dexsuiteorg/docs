@@ -1,40 +1,45 @@
-========================
-DexSuite Documentation
-========================
+==============
+DexSuite Guide
+==============
 
 DexSuite is a robot learning simulation framework built on **Genesis**.
 
-It focuses on dexterous manipulation tasks, flexible robot setups, and clean
-observations for learning and evaluation.
+It is designed for manipulation research where you want a clean path from
+environment setup to training, evaluation, teleoperation, and dataset
+collection. The docs are organized around the things you actually do in the
+library: install it, run tasks, understand the API, configure robots and
+cameras, and browse the task catalog.
 
 .. toctree::
-   :caption: User Guide
    :maxdepth: 2
+   :titlesonly:
    :hidden:
 
-   user_guide/index
-
-.. toctree::
-   :caption: FAQ
-   :maxdepth: 1
-   :hidden:
-
-   faq/index
+   getting_started/index
+   core_concepts/index
+   catalog/index
+   how_to/index
 
 .. image:: assets/concept.png
    :width: 720
 
-Start here
+What You Will Find Here
+-----------------------
+
+- `Getting Started` for installation, first runs, keyboard teleoperation, and builders
+- `Core Concepts` for the API, configurations, robots, environments, cameras, and workspaces
+- `Catalog` for the available environments and robots
+- `How-To` for concrete extension workflows like new cameras and LeRobot conversion
+
+Start Here
 ----------
 
-- Install and run your first task: :doc:`user_guide/getting_started/installation`
-- Quick sanity check demo: :doc:`user_guide/getting_started/run_a_simple_demo`
-- Pick a task from the catalog: :doc:`user_guide/overview/environment/available_envs`
+- Install DexSuite and run your first task: :doc:`getting_started/index`
+- Browse the task and robot catalog: :doc:`catalog/index`
+- Extend or customize the setup: :doc:`how_to/index`
 
-Learn the basics
+Learn The Basics
 ----------------
 
-- API shape and the two configuration styles: :doc:`user_guide/overview/api_overview`
-- Full configuration reference (sim, robot, layout, cameras): :doc:`user_guide/overview/configuration_system`
-- Cameras and modalities: :doc:`user_guide/overview/cameras_sensors`
-- Environment builders (HTML and interactive): :doc:`user_guide/getting_started/environment_builders`
+- Understand the API, configuration flow, and system layout: :doc:`core_concepts/index`
+- Use the environment builders and teleoperation tools: :doc:`getting_started/index`
