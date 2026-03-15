@@ -1,90 +1,120 @@
 Environment Builders
 ====================
 
-DexSuite can be configured in a lot of ways (task, robot, controllers, layout, cameras).
-The two builders below help you generate a correct configuration quickly.
+DexSuite exposes a large configuration space: task, robot, controllers, layout,
+cameras, and sensor modalities. The two builders below help you produce a valid
+``ds.make(...)`` call quickly, without needing to memorize every parameter.
 
-.. image:: ../_static/placeholder_env.svg
-   :width: 720
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
 
-HTML builder (fastest way to get code)
---------------------------------------
+   * - Builder
+     - Best For
+   * - HTML Builder
+     - Instant code generation in a browser, no terminal needed.
+   * - Interactive Builder
+     - Guided terminal setup with a reusable JSON spec and optional live runner.
 
-DexSuite includes a small, self-contained HTML tool:
+HTML Builder
+------------
 
-- ``Dexsuite/env_builder.html``
+The HTML builder is a single, self-contained file that runs entirely in the browser:
 
-Open it in a browser, pick your task and options, then copy the generated Python snippet
-into your script or notebook.
+.. code-block:: text
 
-.. image:: ../_static/placeholder_env.svg
-   :width: 720
+   dexsuite/env_builder.html
 
-What it generates
+Open the file in any browser, configure your environment using the dropdown menus,
+and copy the generated ``ds.make(...)`` snippet into your script or notebook.
+
+What It Generates
 ~~~~~~~~~~~~~~~~~
 
-The HTML builder is focused on generating a good ``ds.make(...)`` call:
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-- Task key
-- Single vs bimanual robot
-- Manipulator and gripper
-- Arm and gripper controllers
-- Layout preset (for bimanual)
-- Cameras and modalities
+   * - Parameter
+     - Description
+   * - Task key
+     - The string identifier passed to ``ds.make()``.
+   * - Robot configuration
+     - Single-arm or bimanual, manipulator model, and gripper model.
+   * - Controllers
+     - Arm controller mode and gripper controller mode.
+   * - Layout preset
+     - Workspace layout for bimanual configurations.
+   * - Cameras and modalities
+     - Camera names and observation types (RGB, depth, segmentation).
+   * - Workspace AABB
+     - Axis-aligned bounding box for the selected manipulator, displayed as a reference.
 
-It also shows a workspace AABB for the selected manipulator so you can sanity check
-that the robot and table setup make sense for the task.
+Interactive Builder
+-------------------
 
-Interactive builder (terminal UI + reusable JSON spec)
-------------------------------------------------------
-
-If you want a guided setup that can also launch a small runner, use the interactive builder:
+The interactive builder provides a guided terminal interface and produces a reusable
+JSON configuration file. It can also launch a live runner after configuration is complete.
 
 .. code-block:: bash
 
    python -m dexsuite.interactive_builder
 
-By default it:
+By default, the builder:
 
-- Launches a terminal UI (or a simpler prompt UI if curses is unavailable)
-- Writes a JSON spec to ``dexsuite_builder_spec.json``
-- Optionally runs the environment after building
+- Launches a full terminal UI (TUI). If ``curses`` is unavailable, it falls back to a simpler prompt-based UI.
+- Writes the completed configuration to ``dexsuite_builder_spec.json``.
+- Offers to run the environment immediately using the chosen input device.
 
-.. image:: ../_static/placeholder_env.svg
-   :width: 720
-
-Common workflows
+Common Workflows
 ~~~~~~~~~~~~~~~~
 
-Build a spec and do not run anything yet:
+Generate a spec file without launching the environment:
 
 .. code-block:: bash
 
    python -m dexsuite.interactive_builder --no-run --output dexsuite_builder_spec.json
 
-Run later from an existing spec:
+Run an environment from an existing spec file:
 
 .. code-block:: bash
 
-   python -m dexsuite.interactive_builder run --config dexsuite_builder_spec.json --input keyboard
+   python -m dexsuite.interactive_builder run \
+     --config dexsuite_builder_spec.json \
+     --input keyboard
 
-Pick a UI explicitly:
+Select a UI mode explicitly:
 
 .. code-block:: bash
 
+   # Full terminal UI
    python -m dexsuite.interactive_builder --ui tui
+
+   # Simple prompt UI (for environments without curses support)
    python -m dexsuite.interactive_builder --ui simple
 
-Supported input devices for the runner are:
+Supported Input Devices for the Runner
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``keyboard``
-- ``spacemouse``
-- ``vive_controller``
-- ``vive_tracker``
-- ``none``
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-Next steps
+   * - Value
+     - Device
+   * - ``keyboard``
+     - Standard keyboard
+   * - ``spacemouse``
+     - 3Dconnexion SpaceMouse
+   * - ``vive_controller``
+     - HTC Vive controller
+   * - ``vive_tracker``
+     - HTC Vive tracker
+   * - ``none``
+     - No input device (environment steps without control input)
+
+Next Steps
 ----------
 
-- Cameras: :doc:`../core_concepts/cameras_sensors`
-- API overview: :doc:`../core_concepts/api_overview`
+- :doc:`../core_concepts/api_overview` covers the full ``ds.make()`` API and all available parameters.
+- :doc:`../core_concepts/cameras_sensors` explains how to configure cameras and sensor modalities.

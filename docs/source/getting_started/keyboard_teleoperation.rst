@@ -1,73 +1,156 @@
 Keyboard Teleoperation
 ======================
 
-Try out a simple teleoperation setup with just your keyboard. This demo uses a
-single-arm robot with the ``osc_pose`` controller (6D delta pose).
+The keyboard demo starts a single-arm robot under the ``osc_pose`` controller and
+maps keyboard keys to 6-DOF end-effector deltas. No additional hardware is required.
 
-Run Script
-----------
+Run
+---
+
+From the repository root:
+
 .. code-block:: bash
 
-   # from the repository root (contains the "dexsuite/" folder)
    python dexsuite/examples/keyboard_demo.py
 
-   # or
+   # Alternatively, as a module
    python -m dexsuite.examples.keyboard_demo
 
-Quit the demo with :kbd:`Ctrl` + :kbd:`C`.
+Quit with :kbd:`Ctrl` + :kbd:`C`.
 
-Key bindings (QWERTY default)
------------------------------
+Key Bindings
+------------
 
-The demo uses the following mapping by default:
+QWERTY (Default)
+~~~~~~~~~~~~~~~~
 
 .. list-table::
-   :widths: 30 70
+   :widths: 25 25 50
    :header-rows: 1
 
    * - Keys
+     - Axis
      - Action
    * - :kbd:`↑` / :kbd:`↓`
-     - Translate ``+dx`` / ``-dx``
+     - X
+     - Translate end-effector forward / backward
    * - :kbd:`←` / :kbd:`→`
-     - Translate ``+dy`` / ``-dy``
+     - Y
+     - Translate end-effector left / right
    * - :kbd:`u` / :kbd:`j`
-     - Translate ``+dz`` / ``-dz``
+     - Z
+     - Translate end-effector up / down
    * - :kbd:`b` / :kbd:`m`
-     - Rotate ``+droll`` / ``-droll``
+     - Roll
+     - Rotate around X-axis
    * - :kbd:`n` / :kbd:`h`
-     - Rotate ``+dpitch`` / ``-dpitch``
+     - Pitch
+     - Rotate around Y-axis
    * - :kbd:`g` / :kbd:`v`
-     - Rotate ``+dyaw`` / ``-dyaw``
+     - Yaw
+     - Rotate around Z-axis
    * - :kbd:`o` / :kbd:`p`
-     - Gripper open / close
+     - Gripper
+     - Open / Close
    * - :kbd:`r`
+     - (reset)
      - Reset the episode
 
-AZERTY mapping
---------------
+AZERTY
+~~~~~~
 
-Use ``--layout azerty`` to switch to an AZERTY-friendly mapping:
+Pass ``--layout azerty`` to use an AZERTY-friendly mapping:
+
+.. code-block:: bash
+
+   python dexsuite/examples/keyboard_demo.py --layout azerty
 
 .. list-table::
-   :widths: 30 70
+   :widths: 25 25 50
    :header-rows: 1
 
    * - Keys
+     - Axis
      - Action
    * - :kbd:`z` / :kbd:`s`
-     - Translate ``+dx`` / ``-dx``
+     - X
+     - Translate end-effector forward / backward
    * - :kbd:`q` / :kbd:`d`
-     - Translate ``+dy`` / ``-dy``
+     - Y
+     - Translate end-effector left / right
    * - :kbd:`e` / :kbd:`a`
-     - Translate ``+dz`` / ``-dz``
+     - Z
+     - Translate end-effector up / down
    * - :kbd:`h` / :kbd:`k`
-     - Rotate ``+droll`` / ``-droll``
+     - Roll
+     - Rotate around X-axis
    * - :kbd:`j` / :kbd:`u`
-     - Rotate ``+dpitch`` / ``-dpitch``
+     - Pitch
+     - Rotate around Y-axis
    * - :kbd:`y` / :kbd:`i`
-     - Rotate ``+dyaw`` / ``-dyaw``
+     - Yaw
+     - Rotate around Z-axis
    * - :kbd:`o` / :kbd:`p`
-     - Gripper open / close
+     - Gripper
+     - Open / Close
    * - :kbd:`r`
+     - (reset)
      - Reset the episode
+
+Command-Line Options
+--------------------
+
+.. list-table::
+   :widths: 30 20 50
+   :header-rows: 1
+
+   * - Argument
+     - Default
+     - Description
+   * - ``--task``
+     - ``reach``
+     - Task key to load.
+   * - ``--manipulator``
+     - ``franka``
+     - Manipulator arm to use.
+   * - ``--gripper``
+     - ``robotiq``
+     - Gripper to attach.
+   * - ``--arm-control``
+     - ``osc_pose``
+     - Arm controller mode.
+   * - ``--gripper-control``
+     - ``joint_position``
+     - Gripper controller mode.
+   * - ``--layout``
+     - ``qwerty``
+     - Keyboard layout. Accepted values: ``qwerty``, ``azerty``.
+   * - ``--pos-sens``
+     - ``1.0``
+     - Position sensitivity multiplier.
+   * - ``--rot-sens``
+     - ``1.0``
+     - Rotation sensitivity multiplier.
+   * - ``--render-mode``
+     - ``human``
+     - Rendering mode.
+   * - ``--control-hz``
+     - ``None``
+     - Control loop frequency in Hz. ``None`` runs as fast as possible.
+
+Example with a different task and increased sensitivity:
+
+.. code-block:: bash
+
+   python dexsuite/examples/keyboard_demo.py \
+     --task pick_place \
+     --manipulator gen3 \
+     --gripper robotiq \
+     --pos-sens 1.5 \
+     --rot-sens 1.2
+
+Next Steps
+----------
+
+Proceed to :doc:`environment_builders` to learn how to configure arbitrary robot
+and task combinations without writing boilerplate code.

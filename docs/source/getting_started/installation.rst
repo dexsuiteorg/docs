@@ -5,135 +5,206 @@ Installation
    :local:
    :depth: 2
 
-Prerequisites
--------------
+System Requirements
+-------------------
 
-- **OS:** Ubuntu **22.04 LTS** or **24.04 LTS**.
-- **GPU:** Required for accelerated simulation/rendering.
-- **OpenGL (important):** Your system must use the **GPU** for OpenGL; otherwise Genesis will fail to initialize the renderer.
-- **Input device:** You need *at least one* of: **Keyboard**, **3Dconnexion SpaceMouse**, or **Manus gloves** to try Dexsuite interactively.
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
 
-Quick GPU/OpenGL sanity checks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   * - Requirement
+     - Specification
+   * - Operating System
+     - Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
+   * - Python
+     - 3.10 or later
+   * - GPU
+     - NVIDIA GPU with a functional driver (required for physics rendering)
+   * - OpenGL
+     - GPU-accelerated (software renderers such as llvmpipe are not supported)
+   * - Physics Engine
+     - Genesis 0.3.3, installed automatically
 
-(Optional) Install the small utilities:
+DexSuite does not support Windows or macOS. All commands below target a Bash shell on one of the supported Ubuntu releases.
+
+Verify GPU and OpenGL
+---------------------
+
+Genesis will refuse to initialize if OpenGL falls back to a software renderer. Verify your setup before installing.
+
+Install the diagnostic utilities if they are not already present:
 
 .. code-block:: bash
 
    sudo apt update && sudo apt install -y mesa-utils pciutils
 
-Then verify:
+Run the checks:
 
 .. code-block:: bash
 
-   # 1) NVIDIA driver present?
+   # Confirm the NVIDIA driver is loaded
    nvidia-smi
 
-   # 2) OpenGL is using your GPU (renderer should show your GPU name, NOT "llvmpipe")
+   # Confirm OpenGL is using the GPU
+   # The renderer line must show your GPU name, NOT "llvmpipe" or "softpipe"
    glxinfo | grep -E "OpenGL vendor|OpenGL renderer"
 
-If `OpenGL renderer` shows **llvmpipe** or generic **Mesa** software, your OpenGL is not using the GPU.
+.. note::
 
-.. tip::
-
-   On hybrid laptops, switching to the discrete GPU often fixes this:
+   On hybrid laptops (Intel + NVIDIA), OpenGL may default to the integrated GPU or to software rendering. Switch to the discrete GPU before proceeding:
 
    .. code-block:: bash
 
       sudo prime-select nvidia
       sudo reboot
 
-   On Ubuntu it also helps to export:
+   If the issue persists after rebooting, add the following line to your shell profile:
 
    .. code-block:: bash
 
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
-Direct Installation
--------------------
+Install DexSuite
+----------------
 
-Option A: PyPI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Virtual Environment (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Install DexSuite inside a dedicated virtual environment to isolate its dependencies.
+
+Using ``venv``:
 
 .. code-block:: bash
 
-   # (optional but recommended) in a fresh virtual environment you favor
-   # python -m venv .venv && source .venv/bin/activate
-   # or: conda create -n dexsuite python=3.10 -y && conda activate dexsuite
-   # pip install --upgrade pip
+   python3.10 -m venv .venv
+   source .venv/bin/activate
+   pip install --upgrade pip
+
+Using ``conda``:
+
+.. code-block:: bash
+
+   conda create -n dexsuite python=3.10 -y
+   conda activate dexsuite
+   pip install --upgrade pip
+
+Option A: From PyPI
+~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
 
    pip install dexsuite
 
-Option B: From source (editable install)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Option B: From Source
+~~~~~~~~~~~~~~~~~~~~~
+
+Use this option to modify the library or run the bundled examples directly from the repository.
 
 .. code-block:: bash
 
-   # (optional but recommended) in a fresh virtual environment you favor
-   # python -m venv .venv && source .venv/bin/activate
-   # or: conda create -n dexsuite python=3.10 -y && conda activate dexsuite
-   # pip install --upgrade pip
-
    git clone <REPO_URL> dexsuite
    cd dexsuite
-
    pip install -e .
 
+Input Device Setup
+------------------
 
-Input Devices
--------------
+DexSuite supports several teleoperation devices. The keyboard works out of the box. All other devices require a Python extra and, in some cases, a system-level configuration step.
 
-Dexsuite supports multiple input devices. Have at least one of these connected:
+.. list-table::
+   :widths: 22 18 20 40
+   :header-rows: 1
 
-- **Keyboard**: Works out of the box. See :doc:`Keyboard Teleoperation <keyboard_teleoperation>`.
-- **SpaceMouse (3Dconnexion)**: Plug-and-play on most Ubuntu setups. If needed, install the daemon:
+   * - Device
+     - Extra
+     - System Setup
+     - Install Command
+   * - Keyboard
+     - (none)
+     - None
+     - Included by default
+   * - 3Dconnexion SpaceMouse
+     - ``spacemouse``
+     - ``spacenavd`` daemon required (see below)
+     - ``pip install "dexsuite[spacemouse]"``
+   * - HTC Vive Controllers
+     - ``vive``
+     - None
+     - ``pip install "dexsuite[vive]"``
+   * - Manus Gloves
+     - ``manus``
+     - Manus vendor runtime required
+     - ``pip install "dexsuite[manus]"``
+   * - All Input Devices
+     - ``devices``
+     - See individual devices above
+     - ``pip install "dexsuite[devices]"``
+   * - HDF5 Dataset Tools
+     - ``datasets``
+     - None
+     - ``pip install "dexsuite[datasets]"``
 
-  .. code-block:: bash
+SpaceMouse daemon setup:
 
-     sudo apt install spacenavd
-     sudo systemctl enable --now spacenavd
+.. code-block:: bash
 
-- **Manus gloves**: Install the vendor runtime/driver per Manus documentation and ensure the device is detected by the system.
+   sudo apt install spacenavd
+   sudo systemctl enable --now spacenavd
+
+For Manus gloves, install and start the Manus vendor runtime following the official Manus SDK documentation before launching DexSuite.
 
 Verify the Installation
 -----------------------
 
-Quick import test:
+Run the following to confirm that DexSuite imports correctly:
 
 .. code-block:: bash
 
    python - << 'PY'
-   import sys
-   try:
-       import dexsuite
-       print("Dexsuite import: OK")
-       print("Dexsuite version:", getattr(dexsuite, "__version__", "unknown"))
-       print("Python:", sys.version.split()[0])
-   except Exception as e:
-       print("Dexsuite import failed:", e)
-       raise
+   import sys, dexsuite
+   print("Python    :", sys.version.split()[0])
+   print("DexSuite  :", getattr(dexsuite, "__version__", "unknown"))
+   print("Status    : OK")
    PY
 
-If OpenGL/GPU is misconfigured you may see renderer initialization errors from Genesis; resolve them using the **Quick GPU/OpenGL sanity checks** above.
+Expected output:
 
-Next Step: Run a Simple Demo
-----------------------------
+.. code-block:: text
 
-If you’ve completed the steps above, you’re ready to test your setup:
-
-- Head to :doc:`Run a Simple Demo <run_a_simple_demo>` to launch your first environment and confirm everything is working.
+   Python    : 3.10.x
+   DexSuite  : 0.1.3
+   Status    : OK
 
 Troubleshooting
 ---------------
 
-- **Genesis/OpenGL initialization errors** (e.g., EGL/GLX/llvmpipe):
-  - Confirm `nvidia-smi` works and that `glxinfo` reports your **GPU** as the OpenGL renderer.
-  - For hybrid laptops: ``sudo prime-select nvidia`` and reboot.
-  - Try exporting ``__GLX_VENDOR_LIBRARY_NAME=nvidia`` in your shell before launching Python.
+**Genesis renderer fails to initialize (EGL, GLX, or llvmpipe errors)**
 
-- **Device not detected (SpaceMouse/Manus):**
-  - Replug the device and check `dmesg` output.
-  - For SpaceMouse, ensure ``spacenavd`` is running.
-  - For Manus gloves, confirm the vendor service/app is running and the device is paired.
-- **Python version:**
-  - Generally speaking, python >= 3.8 should work fine. We recommend python = 3.10.
+OpenGL is not reaching the GPU. Repeat the GPU verification steps above. On hybrid laptops, run ``sudo prime-select nvidia`` and reboot. If the problem persists, add ``export __GLX_VENDOR_LIBRARY_NAME=nvidia`` to your shell profile and open a new terminal.
+
+**SpaceMouse not detected**
+
+Replug the device and inspect the kernel log with ``dmesg | tail -20``. Confirm the daemon is active:
+
+.. code-block:: bash
+
+   sudo systemctl status spacenavd
+
+**Manus gloves not detected**
+
+Confirm the Manus vendor service is running and the device is paired. Refer to the Manus SDK documentation for service startup instructions.
+
+**Python version is below 3.10**
+
+Check which interpreter is active:
+
+.. code-block:: bash
+
+   python --version
+
+Recreate the virtual environment with a supported interpreter if the version is below 3.10.
+
+Next Steps
+----------
+
+Continue to :doc:`run_a_simple_demo` to launch your first environment and verify the full stack.
