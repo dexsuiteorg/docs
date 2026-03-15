@@ -17,7 +17,7 @@ Use these keys with ``ds.make(...)``:
      - Notes
      - DoF
    * - ``franka``
-     - .. image:: ../_static/placeholder_robot.svg
+     - .. image:: ../_static/franka_fr3_right45.png
           :width: 240
      - Franka Emika Panda arm (requires a separate gripper).
      - 7
@@ -47,7 +47,7 @@ Use these keys with ``ds.make(...)``:
      - Universal Robots UR10e arm (requires a separate gripper).
      - 6
    * - ``ur5``
-     - .. image:: ../_static/placeholder_robot.svg
+     - .. image:: ../_static/ur10_right45.png
           :width: 240
      - Universal Robots UR5e arm (requires a separate gripper).
      - 6

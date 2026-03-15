@@ -4,6 +4,9 @@
 {% set in_catalog = pagename == "catalog/index" or pagename.startswith("catalog/") %}
 {% set in_how_to = pagename == "how_to/index" or pagename.startswith("how_to/") %}
 {% set active_robots = pagename == "core_concepts/robots" or pagename.startswith("core_concepts/robot/") %}
+{% set active_modular_robot = pagename == "core_concepts/robot/modular_robot" %}
+{% set active_integrated_robot = pagename == "core_concepts/robot/integrated_robot" %}
+{% set active_bimanual_robot = pagename == "core_concepts/robot/bimanual_robot" %}
 {% set active_env_catalog = pagename == "catalog/available_envs" or pagename.startswith("catalog/environment/") %}
 
 <nav class="bd-docs-nav bd-links" aria-label="Guide Navigation">
@@ -27,7 +30,14 @@
         <ul class="nav bd-sidenav">
           <li class="toctree-l2{% if pagename == 'core_concepts/api_overview' %} current active{% endif %}"><a class="reference internal{% if pagename == 'core_concepts/api_overview' %} current{% endif %}" href="{{ pathto('core_concepts/api_overview') }}"{% if pagename == 'core_concepts/api_overview' %} aria-current="page"{% endif %}>API Overview</a></li>
           <li class="toctree-l2{% if pagename == 'core_concepts/configuration_system' %} current active{% endif %}"><a class="reference internal{% if pagename == 'core_concepts/configuration_system' %} current{% endif %}" href="{{ pathto('core_concepts/configuration_system') }}"{% if pagename == 'core_concepts/configuration_system' %} aria-current="page"{% endif %}>Configuration System</a></li>
-          <li class="toctree-l2{% if active_robots %} current active{% endif %}"><a class="reference internal{% if active_robots %} current{% endif %}" href="{{ pathto('core_concepts/robots') }}"{% if pagename == 'core_concepts/robots' %} aria-current="page"{% endif %}>Robots</a></li>
+          <li class="toctree-l2{% if active_robots %} current active{% endif %}">
+            <a class="reference internal{% if active_robots %} current{% endif %}" href="{{ pathto('core_concepts/robots') }}"{% if pagename == 'core_concepts/robots' %} aria-current="page"{% endif %}>Robots</a>
+            <ul class="nav bd-sidenav">
+              <li class="toctree-l3{% if active_modular_robot %} current active{% endif %}"><a class="reference internal{% if active_modular_robot %} current{% endif %}" href="{{ pathto('core_concepts/robot/modular_robot') }}"{% if active_modular_robot %} aria-current="page"{% endif %}>Modular Robots</a></li>
+              <li class="toctree-l3{% if active_integrated_robot %} current active{% endif %}"><a class="reference internal{% if active_integrated_robot %} current{% endif %}" href="{{ pathto('core_concepts/robot/integrated_robot') }}"{% if active_integrated_robot %} aria-current="page"{% endif %}>Integrated Robots</a></li>
+              <li class="toctree-l3{% if active_bimanual_robot %} current active{% endif %}"><a class="reference internal{% if active_bimanual_robot %} current{% endif %}" href="{{ pathto('core_concepts/robot/bimanual_robot') }}"{% if active_bimanual_robot %} aria-current="page"{% endif %}>Bimanual Robots</a></li>
+            </ul>
+          </li>
           <li class="toctree-l2{% if pagename == 'core_concepts/environment' %} current active{% endif %}"><a class="reference internal{% if pagename == 'core_concepts/environment' %} current{% endif %}" href="{{ pathto('core_concepts/environment') }}"{% if pagename == 'core_concepts/environment' %} aria-current="page"{% endif %}>Environments</a></li>
           <li class="toctree-l2{% if pagename == 'core_concepts/controllers' %} current active{% endif %}"><a class="reference internal{% if pagename == 'core_concepts/controllers' %} current{% endif %}" href="{{ pathto('core_concepts/controllers') }}"{% if pagename == 'core_concepts/controllers' %} aria-current="page"{% endif %}>Controllers</a></li>
           <li class="toctree-l2{% if pagename == 'core_concepts/workspace_layout' %} current active{% endif %}"><a class="reference internal{% if pagename == 'core_concepts/workspace_layout' %} current{% endif %}" href="{{ pathto('core_concepts/workspace_layout') }}"{% if pagename == 'core_concepts/workspace_layout' %} aria-current="page"{% endif %}>Workspace Layout</a></li>
@@ -46,7 +56,14 @@
       <li class="toctree-l1{% if in_how_to %} current active{% endif %}">
         <a class="reference internal{% if in_how_to %} current{% endif %}" href="{{ pathto('how_to/index') }}"{% if pagename == 'how_to/index' %} aria-current="page"{% endif %}>How-To</a>
         <ul class="nav bd-sidenav">
+          <li class="toctree-l2{% if pagename == 'how_to/new_robot' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/new_robot' %} current{% endif %}" href="{{ pathto('how_to/new_robot') }}"{% if pagename == 'how_to/new_robot' %} aria-current="page"{% endif %}>Add a New Robot</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/new_environment' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/new_environment' %} current{% endif %}" href="{{ pathto('how_to/new_environment') }}"{% if pagename == 'how_to/new_environment' %} aria-current="page"{% endif %}>Add a New Environment</a></li>
           <li class="toctree-l2{% if pagename == 'how_to/new_camera' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/new_camera' %} current{% endif %}" href="{{ pathto('how_to/new_camera') }}"{% if pagename == 'how_to/new_camera' %} aria-current="page"{% endif %}>Add a New Camera</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/spacemouse' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/spacemouse' %} current{% endif %}" href="{{ pathto('how_to/spacemouse') }}"{% if pagename == 'how_to/spacemouse' %} aria-current="page"{% endif %}>SpaceMouse</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/vive_controller' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/vive_controller' %} current{% endif %}" href="{{ pathto('how_to/vive_controller') }}"{% if pagename == 'how_to/vive_controller' %} aria-current="page"{% endif %}>Vive Controller</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/manus_glove' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/manus_glove' %} current{% endif %}" href="{{ pathto('how_to/manus_glove') }}"{% if pagename == 'how_to/manus_glove' %} aria-current="page"{% endif %}>Manus Glove</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/hopejr_glove' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/hopejr_glove' %} current{% endif %}" href="{{ pathto('how_to/hopejr_glove') }}"{% if pagename == 'how_to/hopejr_glove' %} aria-current="page"{% endif %}>HopeJR Glove</a></li>
+          <li class="toctree-l2{% if pagename == 'how_to/dexpilot' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/dexpilot' %} current{% endif %}" href="{{ pathto('how_to/dexpilot') }}"{% if pagename == 'how_to/dexpilot' %} aria-current="page"{% endif %}>DexPilot</a></li>
           <li class="toctree-l2{% if pagename == 'how_to/lerobot' %} current active{% endif %}"><a class="reference internal{% if pagename == 'how_to/lerobot' %} current{% endif %}" href="{{ pathto('how_to/lerobot') }}"{% if pagename == 'how_to/lerobot' %} aria-current="page"{% endif %}>LeRobot</a></li>
         </ul>
       </li>
