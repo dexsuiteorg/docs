@@ -22,15 +22,18 @@ Manual Build
 ------------
 
 The frist way to create your setup is to fill the ``ds.make(...)`` function manually.
+
 .. code-block:: python
-  env = ds.make(
+
+   env = ds.make(
        "lift",
        manipulator="franka",
        gripper="robotiq",
        arm_control="osc_pose",
        gripper_control="joint_position",
        render_mode="human",
-  )
+   )
+
 
 We will go more in detail with the API in :doc:`../core_concepts/api_overview`.
 Setting every parameter by hand can be time consuming, therefore we introduce two ways to simplify environment building.
