@@ -99,6 +99,8 @@ JSON configuration file. It can also launch a live runner after configuration is
 
 .. image:: ../_static/interactive_builder.png
 
+The user can navigate through the parameters and set the desired value, or just stay with the default config. 
+
 .. code-block:: bash
 
    python -m dexsuite.interactive_builder

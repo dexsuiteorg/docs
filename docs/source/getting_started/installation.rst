@@ -167,7 +167,9 @@ OpenGL is not reaching the GPU. Repeat the GPU verification steps above. On hybr
 ..    sudo systemctl status spacenavd
 
 **OpenGL error**
+
 For machines with Nvidia GPU, try to force GPU-accelerated rendering by exporting the following environment variables inside the Ubuntu VM:
+
 .. code-block:: bash
   export LIBGL_ALWAYS_INDIRECT=0
   export GALLIUM_DRIVER=d3d12
@@ -175,22 +177,26 @@ For machines with Nvidia GPU, try to force GPU-accelerated rendering by exportin
 
 
 If it does not work, try installing the latest version of OSMesa:
+
 .. code-block:: bash
   sudo add-apt-repository ppa:kisak/kisak-mesa
   sudo apt update
   sudo apt upgrade
 
 Then, only enforce direct rendering:
+
 .. code-block:: bash
   export LIBGL_ALWAYS_INDIRECT=0
 
 
 At the point, `glxinfo` mesa utility can be used to determine which OpenGL vendor is being used by default, i.e.:
+
 .. code-block:: bash
   glxinfo -B
 
 
 As a last resort, one can force CPU (aka. software) rendering using OSMesa if necessary as follows:
+
 .. code-block:: bash
   export LIBGL_ALWAYS_SOFTWARE=1
 

@@ -97,57 +97,6 @@ QWERTY (Default)
 ..      - (reset)
 ..      - Reset the episode
 
-Command-Line Options
---------------------
-
-.. list-table::
-   :widths: 30 20 50
-   :header-rows: 1
-
-   * - Argument
-     - Default
-     - Description
-   * - ``--task``
-     - ``lift``
-     - Task key to load.
-   * - ``--manipulator``
-     - ``franka``
-     - Manipulator arm to use.
-   * - ``--gripper``
-     - ``robotiq``
-     - Gripper to attach.
-   * - ``--arm-control``
-     - ``osc_pose``
-     - Arm controller mode.
-   * - ``--gripper-control``
-     - ``joint_position``
-     - Gripper controller mode.
-   * - ``--layout``
-     - ``qwerty``
-     - Keyboard layout. Accepted values: ``qwerty``, ``azerty``.
-   * - ``--pos-sens``
-     - ``1.0``
-     - Position sensitivity multiplier.
-   * - ``--rot-sens``
-     - ``1.0``
-     - Rotation sensitivity multiplier.
-   * - ``--render-mode``
-     - ``human``
-     - Rendering mode.
-   * - ``--control-hz``
-     - ``None``
-     - Control loop frequency in Hz. ``None`` runs as fast as possible.
-
-Example with a different task and increased sensitivity:
-
-.. code-block:: bash
-
-   python dexsuite/examples/keyboard_demo.py \
-     --task pick_place \
-     --manipulator gen3 \
-     --gripper robotiq \
-     --pos-sens 1.5 \
-     --rot-sens 1.2
 
 
 
