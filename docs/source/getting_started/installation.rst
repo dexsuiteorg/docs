@@ -26,7 +26,7 @@ Verify GPU and OpenGL
 
 Genesis can use OpenGL to accelerate the rendering process. If you plan to use it, verify your setup before installing.
 
-Install the diagnostic utilities if they are not already present:
+Install these command-line tools to help check your system, if you don't already have them:
 
 .. code-block:: bash
 
@@ -64,7 +64,8 @@ Install DexSuite
 Virtual Environment (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install DexSuite inside a dedicated virtual environment to isolate its dependencies.
+We highly recommend installing DexSuite inside a virtual environment. 
+This prevents it from conflicting with other Python projects on your computer.
 
 Using ``venv``:
 
@@ -87,7 +88,6 @@ Using ``conda``:
 Installing From Source
 ~~~~~~~~~~~~~~~~~~~~~
 
-Use this option to modify the library or run the bundled examples directly from the repository.
 
 .. code-block:: bash
 
@@ -95,39 +95,7 @@ Use this option to modify the library or run the bundled examples directly from 
    cd dexsuite
    pip install -e .
 
-.. Input Device Setup
-.. ------------------
 
-.. DexSuite supports several teleoperation devices. The keyboard works out of the box. All other devices require a Python extra and, in some cases, a system-level configuration step.
-
-.. .. list-table::
-..    :widths: 22 18 20
-..    :header-rows: 1
-
-..    * - Device
-..      - Extra
-..      - System Setup
-..    * - Keyboard
-..      - (none)
-..      - None
-..    * - 3Dconnexion SpaceMouse
-..      - ``spacemouse``
-..      - ``spacenavd`` daemon required (see below)
-..    * - HTC Vive Controllers
-..      - ``vive``
-..      - SteamVR/Lighthouse setup or ``libsurvive`` library required
-..    * - Manus Gloves
-..      - ``manus``
-..      - Manus vendor runtime required
-
-.. SpaceMouse daemon setup:
-
-.. .. code-block:: bash
-
-..    sudo apt install spacenavd
-..    sudo systemctl enable --now spacenavd
-
-.. For Manus gloves, install and start the Manus vendor runtime following the official Manus SDK documentation before launching DexSuite.
 
 Verify the Installation
 -----------------------
@@ -154,19 +122,12 @@ Expected output:
 Troubleshooting
 ---------------
 
-**Genesis renderer fails to initialize (EGL, GLX, or llvmpipe errors)**
+**Genesis is running very slowly or shows EGL/GLX errors**
 
 OpenGL is not reaching the GPU. Repeat the GPU verification steps above. On hybrid laptops, run ``sudo prime-select nvidia`` and reboot. If the problem persists, add ``export __GLX_VENDOR_LIBRARY_NAME=nvidia`` to your shell profile and open a new terminal.
 
-.. **SpaceMouse not detected**
 
-.. Replug the device and inspect the kernel log with ``dmesg | tail -20``. Confirm the daemon is active:
-
-.. .. code-block:: bash
-
-..    sudo systemctl status spacenavd
-
-**OpenGL error**
+**OpenGL errors inside a Virtual Machine (VM)**
 
 For machines with Nvidia GPU, try to force GPU-accelerated rendering by exporting the following environment variables inside the Ubuntu VM:
 
@@ -201,7 +162,7 @@ At the point, `glxinfo` mesa utility can be used to determine which OpenGL vendo
 As a last resort, one can force CPU (aka. software) rendering using OSMesa if necessary as follows:
 
 .. code-block:: bash
-   
+
   export LIBGL_ALWAYS_SOFTWARE=1
 
 

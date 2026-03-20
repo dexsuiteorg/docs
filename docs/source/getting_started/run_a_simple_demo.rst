@@ -1,8 +1,8 @@
 Run a Simple Demo
 =================
 
-The keyboard demo starts a single-arm robot under the ``osc_pose`` controller and
-maps keyboard keys to 6-DOF end-effector deltas. No additional hardware is required.
+The keyboard demo starts a simple ``lift`` task with a Franka robot arm and a Robotiq gripper. It
+maps keyboard keys to the control commands. No additional hardware is required.
 
 Run
 ---
@@ -33,13 +33,13 @@ QWERTY (Default)
      - Action
    * - :kbd:`↑` / :kbd:`↓`
      - X
-     - Translate end-effector forward / backward
+     - Move end-effector forward / backward
    * - :kbd:`←` / :kbd:`→`
      - Y
-     - Translate end-effector left / right
+     - Move end-effector left / right
    * - :kbd:`u` / :kbd:`j`
      - Z
-     - Translate end-effector up / down
+     - Move end-effector up / down
    * - :kbd:`b` / :kbd:`m`
      - Roll
      - Rotate around X-axis
@@ -105,7 +105,7 @@ Troubleshooting
 
 **No window appears, or the script exits immediately**
 
-If you are on GPU, confirm that your GPU driver and OpenGL configuration are correct. Refer to the
+If you are using a dedicated GPU, confirm that your GPU driver and OpenGL configuration are correct. Refer to the
 GPU verification steps in :doc:`installation`.
 
 **Genesis initialization error**

@@ -1,9 +1,8 @@
 Environment Builders
 ====================
 
-DexSuite exposes a large configuration space: task, robot, controllers, layout,
-cameras, and sensor modalities. This section introduces you to three ways to produce a valid
-``ds.make(...)`` call quickly.
+DexSuite offers many ways to customize your setup, including different tasks, robots, controllers, and cameras.
+ This section shows you three ways to quickly generate the ``ds.make(...)`` code you need to start your environment.
 
 .. list-table::
    :widths: 25 75
@@ -21,7 +20,7 @@ cameras, and sensor modalities. This section introduces you to three ways to pro
 Manual Build
 ------------
 
-The frist way to create your setup is to fill the ``ds.make(...)`` function manually.
+The first way to create your setup is to write the ``ds.make(...)`` function by hand.
 
 .. code-block:: python
 
@@ -89,17 +88,17 @@ What It Generates
    * - Cameras and modalities
      - Camera names and observation types (RGB, depth, segmentation).
    * - Workspace AABB
-     - Axis-aligned bounding box for the selected manipulator, displayed as a reference.
+     - The 3D limits (bounding box) for the selected robot arm, displayed as a visual reference.
 
 Interactive Builder
 -------------------
 
-The interactive builder provides a guided terminal interface and produces a reusable
-JSON configuration file. It can also launch a live runner after configuration is complete.
+The interactive builder guides you through a setup menu in your terminal and saves your choices in a reusable JSON file.
+ It can also launch the simulation immediately after you finish configuring it.
 
 .. image:: ../_static/interactive_builder.png
 
-The user can navigate through the parameters and set the desired value, or just stay with the default config. 
+You can navigate the menus to customize parameters, or simply press Enter to keep the default settings.
 
 .. code-block:: bash
 
