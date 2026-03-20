@@ -1,38 +1,104 @@
 Run a Simple Demo
 =================
 
-The simple demo launches a Franka arm with a Robotiq gripper in the ``stack`` task
-and steps the simulation through a short rollout. It is the fastest way to confirm
-that your installation, GPU driver, and Genesis renderer are all working correctly.
+The keyboard demo starts a single-arm robot under the ``osc_pose`` controller and
+maps keyboard keys to 6-DOF end-effector deltas. No additional hardware is required.
 
 Run
 ---
 
-From the repository root (the directory that contains the ``dexsuite/`` folder):
+From the repository root:
 
 .. code-block:: bash
 
-   python dexsuite/examples/simple_stack_demo.py
+   python dexsuite/examples/keyboard_demo.py
 
    # Alternatively, as a module
-   python -m dexsuite.examples.simple_stack_demo
+   python -m dexsuite.examples.keyboard_demo
 
-Expected Output
----------------
+Quit with :kbd:`Ctrl` + :kbd:`C`.
 
-A viewer window opens showing the Franka arm and two cubes on a table. The script
-steps the environment for several seconds and then prints:
+Key Bindings
+------------
 
-.. code-block:: text
+QWERTY (Default)
+~~~~~~~~~~~~~~~~
 
-   Dexsuite is good to go!
+.. list-table::
+   :widths: 25 25 50
+   :header-rows: 1
 
-The window closes automatically when the script finishes.
+   * - Keys
+     - Axis
+     - Action
+   * - :kbd:`↑` / :kbd:`↓`
+     - X
+     - Translate end-effector forward / backward
+   * - :kbd:`←` / :kbd:`→`
+     - Y
+     - Translate end-effector left / right
+   * - :kbd:`u` / :kbd:`j`
+     - Z
+     - Translate end-effector up / down
+   * - :kbd:`b` / :kbd:`m`
+     - Roll
+     - Rotate around X-axis
+   * - :kbd:`n` / :kbd:`h`
+     - Pitch
+     - Rotate around Y-axis
+   * - :kbd:`g` / :kbd:`v`
+     - Yaw
+     - Rotate around Z-axis
+   * - :kbd:`o` / :kbd:`p`
+     - Gripper
+     - Open / Close
+   * - :kbd:`r`
+     - (reset)
+     - Reset the episode
+
+.. AZERTY
+.. ~~~~~~
+
+.. Pass ``--layout azerty`` to use an AZERTY-friendly mapping:
+
+.. .. code-block:: bash
+
+..    python dexsuite/examples/keyboard_demo.py --layout azerty
+
+.. .. list-table::
+..    :widths: 25 25 50
+..    :header-rows: 1
+
+..    * - Keys
+..      - Axis
+..      - Action
+..    * - :kbd:`z` / :kbd:`s`
+..      - X
+..      - Translate end-effector forward / backward
+..    * - :kbd:`q` / :kbd:`d`
+..      - Y
+..      - Translate end-effector left / right
+..    * - :kbd:`e` / :kbd:`a`
+..      - Z
+..      - Translate end-effector up / down
+..    * - :kbd:`h` / :kbd:`k`
+..      - Roll
+..      - Rotate around X-axis
+..    * - :kbd:`j` / :kbd:`u`
+..      - Pitch
+..      - Rotate around Y-axis
+..    * - :kbd:`y` / :kbd:`i`
+..      - Yaw
+..      - Rotate around Z-axis
+..    * - :kbd:`o` / :kbd:`p`
+..      - Gripper
+..      - Open / Close
+..    * - :kbd:`r`
+..      - (reset)
+..      - Reset the episode
 
 Command-Line Options
 --------------------
-
-The demo accepts arguments to change the robot, task, and rendering behavior.
 
 .. list-table::
    :widths: 30 20 50
@@ -42,8 +108,8 @@ The demo accepts arguments to change the robot, task, and rendering behavior.
      - Default
      - Description
    * - ``--task``
-     - ``stack``
-     - Task key to load. See the :doc:`../catalog/index` for all available tasks.
+     - ``lift``
+     - Task key to load.
    * - ``--manipulator``
      - ``franka``
      - Manipulator arm to use.
@@ -56,32 +122,41 @@ The demo accepts arguments to change the robot, task, and rendering behavior.
    * - ``--gripper-control``
      - ``joint_position``
      - Gripper controller mode.
-   * - ``--steps``
-     - ``300``
-     - Number of simulation steps to run.
+   * - ``--layout``
+     - ``qwerty``
+     - Keyboard layout. Accepted values: ``qwerty``, ``azerty``.
+   * - ``--pos-sens``
+     - ``1.0``
+     - Position sensitivity multiplier.
+   * - ``--rot-sens``
+     - ``1.0``
+     - Rotation sensitivity multiplier.
    * - ``--render-mode``
      - ``human``
-     - Rendering mode. Use ``human`` for a viewer window.
-   * - ``--seed``
-     - ``0``
-     - Random seed for environment initialization.
+     - Rendering mode.
+   * - ``--control-hz``
+     - ``None``
+     - Control loop frequency in Hz. ``None`` runs as fast as possible.
 
-Example with a different robot:
+Example with a different task and increased sensitivity:
 
 .. code-block:: bash
 
-   python dexsuite/examples/simple_stack_demo.py \
+   python dexsuite/examples/keyboard_demo.py \
      --task pick_place \
      --manipulator gen3 \
      --gripper robotiq \
-     --steps 500
+     --pos-sens 1.5 \
+     --rot-sens 1.2
+
+
 
 Troubleshooting
 ---------------
 
 **No window appears, or the script exits immediately**
 
-Confirm that your GPU driver and OpenGL configuration are correct. Refer to the
+If you are on GPU, confirm that your GPU driver and OpenGL configuration are correct. Refer to the
 GPU verification steps in :doc:`installation`.
 
 **Genesis initialization error**
@@ -92,5 +167,5 @@ This typically indicates a renderer or driver problem. Run ``nvidia-smi`` and
 Next Steps
 ----------
 
-Proceed to :doc:`keyboard_teleoperation` to take direct control of an environment
-using your keyboard.
+Proceed to :doc:`environment_builders` to learn how to configure arbitrary robot
+and task combinations without writing boilerplate code.

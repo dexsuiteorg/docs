@@ -2,8 +2,8 @@ Environment Builders
 ====================
 
 DexSuite exposes a large configuration space: task, robot, controllers, layout,
-cameras, and sensor modalities. The two builders below help you produce a valid
-``ds.make(...)`` call quickly, without needing to memorize every parameter.
+cameras, and sensor modalities. This section introduces you to three ways to produce a valid
+``ds.make(...)`` call quickly.
 
 .. list-table::
    :widths: 25 75
@@ -11,22 +11,71 @@ cameras, and sensor modalities. The two builders below help you produce a valid
 
    * - Builder
      - Best For
-   * - HTML Builder
+  * - Manual Build
+     - Integration with other projects, ultimate control and customization.
+   * - Web Builder
      - Instant code generation in a browser, no terminal needed.
    * - Interactive Builder
      - Guided terminal setup with a reusable JSON spec and optional live runner.
 
-HTML Builder
+Manual Build
 ------------
 
-The HTML builder is a single, self-contained file that runs entirely in the browser:
+The frist way to create your setup is to fill the ``ds.make(...)`` function manually.
+.. code-block:: python
+  env = ds.make(
+        task,
+        sim=ds.options.SimOptions(control_hz=20),
+        robot=ds.options.RobotOptions(
+            single=ds.options.ArmOptions(
+                manipulator="ur5",
+                gripper="allegro",
+                manipulator_controller=ds.options.ControllerOptions(
+                    name="osc_pose_abs_quat",
+                    config={"normalized": False},
+                ),
+                gripper_controller=ds.options.ControllerOptions(
+                    name="joint_position",
+                    config={"normalized": False},
+                ),
+            ),
+        ),
+        cameras=["front", "wrist"],
+        render_mode="human",
+    )
+We will go more in detail with the API in :doc:`../core_concepts/api_overview`.
+Setting every parameter by hand can be time consuming, therefore we introduce two ways to simplify environment building.
 
-.. code-block:: text
+Web-Based Builder
+-----------------
 
-   dexsuite/env_builder.html
+The Web builder is a single, self-contained file that runs entirely in the browser. You can access it in one of two ways:
 
-Open the file in any browser, configure your environment using the dropdown menus,
-and copy the generated ``ds.make(...)`` snippet into your script or notebook.
+.. image:: ../_static/web_builder.png
+  
+Option 1: Run a Local Server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can serve the file locally using Python's built-in HTTP server. Run this command from your terminal:
+
+.. code-block:: bash
+
+   python3 -m http.server -d scripts/interactive_builder/
+
+Once the server is running, open your web browser and navigate to ``http://localhost:8000/env_builder.html`` to access the builder.
+
+Option 2: Open the File Directly
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since it requires no backend, you can simply open the HTML file directly from your file manager into any browser. Locate the following file:
+
+.. code-block:: text 
+
+   scripts/interactive_builder/env_builder.html
+
+Double-click the file to open it. Configure your environment using the dropdown menus, and copy the generated ``ds.make(...)`` snippet into your script or notebook.
+
+
 
 What It Generates
 ~~~~~~~~~~~~~~~~~
@@ -56,6 +105,8 @@ Interactive Builder
 The interactive builder provides a guided terminal interface and produces a reusable
 JSON configuration file. It can also launch a live runner after configuration is complete.
 
+.. image:: ../_static/interactive_builder.png
+
 .. code-block:: bash
 
    python -m dexsuite.interactive_builder
@@ -65,6 +116,8 @@ By default, the builder:
 - Launches a full terminal UI (TUI). If ``curses`` is unavailable, it falls back to a simpler prompt-based UI.
 - Writes the completed configuration to ``dexsuite_builder_spec.json``.
 - Offers to run the environment immediately using the chosen input device.
+
+
 
 Common Workflows
 ~~~~~~~~~~~~~~~~
