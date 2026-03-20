@@ -96,22 +96,7 @@ Select a UI mode explicitly:
 Supported Input Devices for the Runner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
 
-   * - Value
-     - Device
-   * - ``keyboard``
-     - Standard keyboard
-   * - ``spacemouse``
-     - 3Dconnexion SpaceMouse
-   * - ``vive_controller``
-     - HTC Vive controller
-   * - ``vive_tracker``
-     - HTC Vive tracker
-   * - ``none``
-     - No input device (environment steps without control input)
 
 Next Steps
 ----------

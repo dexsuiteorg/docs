@@ -14,55 +14,48 @@ System Requirements
 
    * - Requirement
      - Specification
-   * - Operating System
-     - Ubuntu 22.04 LTS or Ubuntu 24.04 LTS
    * - Python
      - 3.10 or later
-   * - GPU
-     - NVIDIA GPU with a functional driver (required for physics rendering)
-   * - OpenGL
-     - GPU-accelerated (software renderers such as llvmpipe are not supported)
    * - Physics Engine
      - Genesis 0.3.3, installed automatically
 
-DexSuite does not support Windows or macOS. All commands below target a Bash shell on one of the supported Ubuntu releases.
 
-Verify GPU and OpenGL
----------------------
+.. Verify GPU and OpenGL
+.. ---------------------
 
-Genesis will refuse to initialize if OpenGL falls back to a software renderer. Verify your setup before installing.
+.. Genesis will refuse to initialize if OpenGL falls back to a software renderer. Verify your setup before installing.
 
-Install the diagnostic utilities if they are not already present:
+.. Install the diagnostic utilities if they are not already present:
 
-.. code-block:: bash
+.. .. code-block:: bash
 
-   sudo apt update && sudo apt install -y mesa-utils pciutils
+..    sudo apt update && sudo apt install -y mesa-utils pciutils
 
-Run the checks:
+.. Run the checks:
 
-.. code-block:: bash
+.. .. code-block:: bash
 
-   # Confirm the NVIDIA driver is loaded
-   nvidia-smi
+..    # Confirm the NVIDIA driver is loaded
+..    nvidia-smi
 
-   # Confirm OpenGL is using the GPU
-   # The renderer line must show your GPU name, NOT "llvmpipe" or "softpipe"
-   glxinfo | grep -E "OpenGL vendor|OpenGL renderer"
+..    # Confirm OpenGL is using the GPU
+..    # The renderer line must show your GPU name, NOT "llvmpipe" or "softpipe"
+..    glxinfo | grep -E "OpenGL vendor|OpenGL renderer"
 
-.. note::
+.. .. note::
 
-   On hybrid laptops (Intel + NVIDIA), OpenGL may default to the integrated GPU or to software rendering. Switch to the discrete GPU before proceeding:
+..    On hybrid laptops (Intel + NVIDIA), OpenGL may default to the integrated GPU or to software rendering. Switch to the discrete GPU before proceeding:
 
-   .. code-block:: bash
+..    .. code-block:: bash
 
-      sudo prime-select nvidia
-      sudo reboot
+..       sudo prime-select nvidia
+..       sudo reboot
 
-   If the issue persists after rebooting, add the following line to your shell profile:
+..    If the issue persists after rebooting, add the following line to your shell profile:
 
-   .. code-block:: bash
+..    .. code-block:: bash
 
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+..       export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
 Install DexSuite
 ----------------
@@ -88,14 +81,9 @@ Using ``conda``:
    conda activate dexsuite
    pip install --upgrade pip
 
-Option A: From PyPI
-~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: bash
 
-   pip install dexsuite
-
-Option B: From Source
+Installing From Source
 ~~~~~~~~~~~~~~~~~~~~~
 
 Use this option to modify the library or run the bundled examples directly from the repository.
@@ -112,37 +100,24 @@ Input Device Setup
 DexSuite supports several teleoperation devices. The keyboard works out of the box. All other devices require a Python extra and, in some cases, a system-level configuration step.
 
 .. list-table::
-   :widths: 22 18 20 40
+   :widths: 22 18 20
    :header-rows: 1
 
    * - Device
      - Extra
      - System Setup
-     - Install Command
    * - Keyboard
      - (none)
      - None
-     - Included by default
    * - 3Dconnexion SpaceMouse
      - ``spacemouse``
      - ``spacenavd`` daemon required (see below)
-     - ``pip install "dexsuite[spacemouse]"``
    * - HTC Vive Controllers
      - ``vive``
-     - None
-     - ``pip install "dexsuite[vive]"``
+     - SteamVR/Lighthouse setup or ``libsurvive`` library required
    * - Manus Gloves
      - ``manus``
      - Manus vendor runtime required
-     - ``pip install "dexsuite[manus]"``
-   * - All Input Devices
-     - ``devices``
-     - See individual devices above
-     - ``pip install "dexsuite[devices]"``
-   * - HDF5 Dataset Tools
-     - ``datasets``
-     - None
-     - ``pip install "dexsuite[datasets]"``
 
 SpaceMouse daemon setup:
 
@@ -178,9 +153,6 @@ Expected output:
 Troubleshooting
 ---------------
 
-**Genesis renderer fails to initialize (EGL, GLX, or llvmpipe errors)**
-
-OpenGL is not reaching the GPU. Repeat the GPU verification steps above. On hybrid laptops, run ``sudo prime-select nvidia`` and reboot. If the problem persists, add ``export __GLX_VENDOR_LIBRARY_NAME=nvidia`` to your shell profile and open a new terminal.
 
 **SpaceMouse not detected**
 

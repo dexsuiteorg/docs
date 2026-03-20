@@ -56,46 +56,46 @@ QWERTY (Default)
      - (reset)
      - Reset the episode
 
-AZERTY
-~~~~~~
+.. AZERTY
+.. ~~~~~~
 
-Pass ``--layout azerty`` to use an AZERTY-friendly mapping:
+.. Pass ``--layout azerty`` to use an AZERTY-friendly mapping:
 
-.. code-block:: bash
+.. .. code-block:: bash
 
-   python dexsuite/examples/keyboard_demo.py --layout azerty
+..    python dexsuite/examples/keyboard_demo.py --layout azerty
 
-.. list-table::
-   :widths: 25 25 50
-   :header-rows: 1
+.. .. list-table::
+..    :widths: 25 25 50
+..    :header-rows: 1
 
-   * - Keys
-     - Axis
-     - Action
-   * - :kbd:`z` / :kbd:`s`
-     - X
-     - Translate end-effector forward / backward
-   * - :kbd:`q` / :kbd:`d`
-     - Y
-     - Translate end-effector left / right
-   * - :kbd:`e` / :kbd:`a`
-     - Z
-     - Translate end-effector up / down
-   * - :kbd:`h` / :kbd:`k`
-     - Roll
-     - Rotate around X-axis
-   * - :kbd:`j` / :kbd:`u`
-     - Pitch
-     - Rotate around Y-axis
-   * - :kbd:`y` / :kbd:`i`
-     - Yaw
-     - Rotate around Z-axis
-   * - :kbd:`o` / :kbd:`p`
-     - Gripper
-     - Open / Close
-   * - :kbd:`r`
-     - (reset)
-     - Reset the episode
+..    * - Keys
+..      - Axis
+..      - Action
+..    * - :kbd:`z` / :kbd:`s`
+..      - X
+..      - Translate end-effector forward / backward
+..    * - :kbd:`q` / :kbd:`d`
+..      - Y
+..      - Translate end-effector left / right
+..    * - :kbd:`e` / :kbd:`a`
+..      - Z
+..      - Translate end-effector up / down
+..    * - :kbd:`h` / :kbd:`k`
+..      - Roll
+..      - Rotate around X-axis
+..    * - :kbd:`j` / :kbd:`u`
+..      - Pitch
+..      - Rotate around Y-axis
+..    * - :kbd:`y` / :kbd:`i`
+..      - Yaw
+..      - Rotate around Z-axis
+..    * - :kbd:`o` / :kbd:`p`
+..      - Gripper
+..      - Open / Close
+..    * - :kbd:`r`
+..      - (reset)
+..      - Reset the episode
 
 Command-Line Options
 --------------------
