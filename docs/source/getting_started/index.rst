@@ -10,7 +10,7 @@ try the builder and teleoperation tools before going deeper into the system.
 
    * - :doc:`installation`
      - Step-by-step instructions to get DexSuite installed on your machine.
-   * - :doc:`run_a_simple_demo``
+   * - :doc:`run_a_simple_demo`
      - Learn how to launch your first simulation and teleoperate it.
    * - :doc:`environment_builders`
      - Generate environment initialization code using interactive tools.
