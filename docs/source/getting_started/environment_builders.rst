@@ -23,26 +23,17 @@ Manual Build
 
 The frist way to create your setup is to fill the ``ds.make(...)`` function manually.
 .. code-block:: python
-  env = ds.make(
-        task,
-        sim=ds.options.SimOptions(control_hz=20),
-        robot=ds.options.RobotOptions(
-            single=ds.options.ArmOptions(
-                manipulator="ur5",
-                gripper="allegro",
-                manipulator_controller=ds.options.ControllerOptions(
-                    name="osc_pose_abs_quat",
-                    config={"normalized": False},
-                ),
-                gripper_controller=ds.options.ControllerOptions(
-                    name="joint_position",
-                    config={"normalized": False},
-                ),
-            ),
-        ),
-        cameras=["front", "wrist"],
-        render_mode="human",
-    )
+
+   env = ds.make(
+       task,
+       manipulator="ur5",
+       gripper="allegro",
+       arm_control="osc_pose_abs_quat",
+       gripper_control="joint_position",
+       sim=ds.SimOptions(control_hz=20),
+       cameras=["front", "wrist"],
+       render_mode="human",
+   )
 We will go more in detail with the API in :doc:`../core_concepts/api_overview`.
 Setting every parameter by hand can be time consuming, therefore we introduce two ways to simplify environment building.
 
@@ -52,7 +43,7 @@ Web-Based Builder
 The Web builder is a single, self-contained file that runs entirely in the browser. You can access it in one of two ways:
 
 .. image:: ../_static/web_builder.png
-  
+
 Option 1: Run a Local Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
