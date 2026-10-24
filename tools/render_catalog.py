@@ -45,7 +45,7 @@ ASSETS = {f"arm_{a}": (f"{a}__robotiq", ["arm"], ARM_VIEW)
 ASSETS.update({f"robot_{r}": (f"{r}__none", ["arm", "hand", "mount"], ARM_VIEW)
                for r in ("aloha_tactile", "gen3_lite", "so_100", "trossen_vx300s", "trossen_wx250s", "franka_with_gripper")})
 ASSETS.update({f"ee_{g}": (f"franka__{g}", ["hand"], EE_VIEW)
-               for g in ("robotiq", "umi", "franka_umi_tacticle", "barrett", "dclaw", "inspire", "ability", "schunk",
+               for g in ("robotiq", "franka_umi_tacticle", "barrett", "dclaw", "inspire", "ability", "schunk",
                          "allegro", "leap", "sharpa", "sharpa_fardexbot", "shadow")})
 
 

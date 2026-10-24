@@ -5,7 +5,7 @@ penetration into nearby objects into normal and friction forces.</p>
 
 ## Turn them on
 
-Pads are declared on the model class. This is the UMI tactile gripper:
+Pads are declared on the model class. This is the UMI gripper:
 
 ```python
 @register_gripper("franka_umi_tacticle")
@@ -43,7 +43,7 @@ like any other observation, which is how the scripted UMI datasets carry tactile
 
 ## Watch them
 
-`scripts/franka_umi_tactile.py` drives the tactile gripper from the keyboard and plots the pads live:
+`scripts/franka_umi_tactile.py` drives the UMI gripper from the keyboard and plots the pads live:
 
 ```bash
 python scripts/franka_umi_tactile.py --task pick_place_pan --plot

@@ -26,7 +26,7 @@ task runs with any arm and any end-effector that fits it.</p>
 <div class="ds-stats">
 <div class="ds-stat"><b>26</b><span>tasks ready to run</span></div>
 <div class="ds-stat"><b>15</b><span>arms and robots</span></div>
-<div class="ds-stat"><b>12</b><span>end-effectors</span></div>
+<div class="ds-stat"><b>11</b><span>end-effectors</span></div>
 <div class="ds-stat"><b>16</b><span>benchmark task-embodiment pairs</span></div>
 <div class="ds-stat"><b>4,700</b><span>episodes on Hugging Face</span></div>
 </div>
@@ -79,7 +79,7 @@ Reaching and stacking, mugs and pans, drills, spray cans, toasters, safes, and t
 :link: robots/index
 :link-type: doc
 :img-top: _static/catalog/ee_allegro.webp
-Ten arms, six integrated robots, a floating wrist and twelve end-effectors, from parallel-jaw grippers to a 24-joint hand.
+Ten arms, six integrated robots, a floating wrist and eleven end-effectors, from parallel-jaw grippers to a 24-joint hand.
 :::
 ::::
 

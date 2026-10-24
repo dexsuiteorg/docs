@@ -21,6 +21,7 @@ CLASSES = [("sim.py", "SimOptions"), ("robot.py", "RobotOptions"), ("robot.py", 
 READABLE = {"_default_manipulator_controller": 'ControllerOptions("osc_pose")',
             "_default_gripper_controller": 'ControllerOptions("joint_position")',
             "_DEFAULT_MANIPULATOR": '"franka"', "_DEFAULT_GRIPPER": '"robotiq"'}
+HIDDEN = {"umi"}   # registered, but not a documented robot: the UMI gripper is franka_umi_tacticle
 MISSING = {("SimOptions", "n_envs"): "Number of parallel copies of the scene.",
            ("LayoutOptions", "params"): "Reserved, not used yet."}
 
@@ -113,6 +114,7 @@ def registry_md():
             out |= set(re.findall(rf'{deco}\("([A-Za-z0-9_]+)"', p.read_text(errors="ignore")))
         return sorted(out, key=str.lower)
     envs, arms, ees = names("environments", "register_env"), names("models/manipulators", "register_manipulator"), names("models/grippers", "register_gripper")
+    ees = [e for e in ees if e not in HIDDEN]
     ctrls = sorted(p.stem for p in (PKG / "controllers").glob("*.py") if not p.stem.startswith("_") and p.stem not in ("base", "base_controller", "pose_backend", "validation", "utils"))
     fmt = lambda xs: ", ".join(f"`{x}`" for x in xs)  # noqa: E731
     return f"""# Registry

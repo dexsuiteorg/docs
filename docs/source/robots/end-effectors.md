@@ -1,6 +1,6 @@
 # End-effectors
 
-<p class="ds-lede">Twelve end-effectors, from parallel-jaw grippers to a 24-joint hand. Every one is controlled per
+<p class="ds-lede">Eleven end-effectors, from parallel-jaw grippers to a 24-joint hand. Every one is controlled per
 joint, so the gripper part of the action has one entry per actuated degree of freedom.</p>
 
 (robotiq)=
@@ -17,24 +17,10 @@ joint, so the gripper part of the action has one entry per actuated degree of fr
 <dt>Model license</dt><dd>BSD-2</dd>
 </dl>
 
-(umi)=
+(franka_umi_tacticle)=
 ## UMI gripper
 
-<img class="ds-render" style="max-width:340px" src="../_static/catalog/ee_umi.webp" alt="UMI gripper">
-
-<dl class="ds-spec">
-<dt>Key</dt><dd><code>umi</code></dd>
-<dt>Type</dt><dd>Parallel-jaw gripper</dd>
-<dt>Actuated DoF</dt><dd>1</dd>
-<dt>Fingers</dt><dd>2</dd>
-<dt>Mounts on</dt><dd><code>franka</code>, <code>gen3</code>, <code>kuka</code>, <code>link6</code>, <code>ur10</code>, <code>lite6</code>, <code>sawyer</code>, <code>z1</code>, <code>ur5</code></dd>
-<dt>Model license</dt><dd>not stated</dd>
-</dl>
-
-(franka_umi_tacticle)=
-## UMI tactile gripper
-
-<img class="ds-render" style="max-width:340px" src="../_static/catalog/ee_franka_umi_tacticle.webp" alt="UMI tactile gripper">
+<img class="ds-render" style="max-width:340px" src="../_static/catalog/ee_franka_umi_tacticle.webp" alt="UMI gripper">
 
 <dl class="ds-spec">
 <dt>Key</dt><dd><code>franka_umi_tacticle</code></dd>

@@ -95,7 +95,7 @@ planes (0.1 and 20 m by default).
 (tactile)=
 ## Tactile pads
 
-Two end-effectors carry simulated tactile pads: the UMI tactile gripper (`franka_umi_tacticle`) and the tactile ALOHA
+Two end-effectors carry simulated tactile pads: the UMI gripper (`franka_umi_tacticle`) and the tactile ALOHA
 (`aloha_tactile`). Each finger has a flat pad with the layout of the FlexiTac sensor, a grid of 12 by 32 taxels at
 2 mm spacing. Every taxel turns its penetration into nearby objects into a normal and a friction force.
 

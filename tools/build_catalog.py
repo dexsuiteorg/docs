@@ -341,10 +341,13 @@ def arms_page():
     return "".join(parts)
 
 
-def ee_page():
-    parts = ["""# End-effectors
+NUM = {10: "Ten", 11: "Eleven", 12: "Twelve", 13: "Thirteen"}
 
-<p class="ds-lede">Twelve end-effectors, from parallel-jaw grippers to a 24-joint hand. Every one is controlled per
+
+def ee_page():
+    parts = [f"""# End-effectors
+
+<p class="ds-lede">{NUM[len(END_EFFECTORS)]} end-effectors, from parallel-jaw grippers to a 24-joint hand. Every one is controlled per
 joint, so the gripper part of the action has one entry per actuated degree of freedom.</p>
 """]
     for e in END_EFFECTORS:

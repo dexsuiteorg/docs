@@ -12,7 +12,7 @@ Human teleoperation
   tracker and a Manus glove ([Recording](../teleop/recording.md)).
 
 Scripted experts
-: 1,200 demonstrations from task-specific controllers on the UMI tactile gripper and the Sharpa hand, 200 per pair.
+: 1,200 demonstrations from task-specific controllers on the UMI gripper and the Sharpa hand, 200 per pair.
   The UMI sets include the tactile pad readings ([Scripted collection](scripted.md)).
 
 Machine-generated

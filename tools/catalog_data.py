@@ -204,8 +204,7 @@ FLOATING = dict(key="floating", name="Floating wrist", dof=6,
 
 END_EFFECTORS = [
     dict(key="robotiq", name="Robotiq 2F-85", kind="Parallel-jaw gripper", dof=1, fingers=2, license="BSD-2"),
-    dict(key="umi", name="UMI gripper", kind="Parallel-jaw gripper", dof=1, fingers=2, license="not stated"),
-    dict(key="franka_umi_tacticle", name="UMI tactile gripper", kind="Parallel-jaw gripper with tactile pads", dof=2, fingers=2,
+    dict(key="franka_umi_tacticle", name="UMI gripper", kind="Parallel-jaw gripper with tactile pads", dof=2, fingers=2,
          tactile=True, license="not stated"),
     dict(key="barrett", name="BarrettHand", kind="Three-finger hand", dof=8, fingers=3, license="BSD-style"),
     dict(key="dclaw", name="D'Claw", kind="Three-finger hand", dof=9, fingers=3, license="Apache-2.0 (ROBEL)"),
@@ -220,11 +219,11 @@ END_EFFECTORS = [
 ]
 
 # gripper keys with an adapter on each arm (dexsuite/models/manipulators/<arm>/<arm>_adapters.yaml)
-_T = ["allegro", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "umi", "shadow"]
+_T = ["allegro", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "shadow"]
 ADAPTERS = {
-    "franka": ["allegro", "shadow", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "franka_umi_tacticle", "umi", "sharpa"],
+    "franka": ["allegro", "shadow", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "franka_umi_tacticle", "sharpa"],
     "franka_fr3": [],
     "gen3": _T, "kuka": _T, "link6": _T, "ur10": _T, "lite6": _T, "sawyer": _T, "z1": _T,
-    "ur5": ["allegro", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "umi"],
+    "ur5": ["allegro", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk"],
     "floating": ["allegro", "sharpa"],
 }

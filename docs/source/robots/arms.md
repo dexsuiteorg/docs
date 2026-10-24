@@ -15,7 +15,7 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>panda_nohand.xml</code>, license Apache-2.0 (MuJoCo Menagerie)</dd>
-<dt>End-effectors</dt><dd>`allegro`, `shadow`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `franka_umi_tacticle`, `umi`, `sharpa`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `shadow`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `franka_umi_tacticle`, `sharpa`</dd>
 </dl>
 
 (franka_fr3)=
@@ -45,7 +45,7 @@ No end-effector adapters yet, so it cannot be built.
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>gen3.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 (kuka)=
@@ -58,7 +58,7 @@ No end-effector adapters yet, so it cannot be built.
 <dt>Maker</dt><dd>KUKA</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>iiwa14.xml</code>, license BSD-3 (Drake)</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 ```{warning}
@@ -75,7 +75,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Rethink Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>sawyer.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 ```{warning}
@@ -92,7 +92,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur5e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`</dd>
 </dl>
 
 (ur10)=
@@ -105,7 +105,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur10e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 (lite6)=
@@ -118,7 +118,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>UFactory</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>lite6.xml</code>, license BSD-style</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 ```{warning}
@@ -135,7 +135,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>link6_best.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 ```{warning}
@@ -152,7 +152,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Unitree</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>z1.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `umi`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
 </dl>
 
 ```{warning}

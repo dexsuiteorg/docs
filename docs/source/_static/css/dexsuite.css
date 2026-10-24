@@ -191,3 +191,7 @@ svg.ds-diagram { width: 100%; height: auto; display: block; margin: 0.6rem 0 1.6
 .ds-duo figure { margin: 0; }
 img.ds-render { width: 100%; display: block; margin: 0.6rem 0 1.2rem; }
 @media (max-width: 720px) { .ds-duo { grid-template-columns: 1fr; } }
+
+/* tiles in a row share a height: the caption area fills the rest, no grey band under short captions */
+.ds-tile { display: flex; flex-direction: column; }
+.ds-tile .ds-tile-text { flex: 1; }
