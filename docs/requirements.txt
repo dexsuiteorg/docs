@@ -1,3 +1,6 @@
-sphinx>=8.1
-pydata-sphinx-theme
-sphinx-copybutton
+# Pinned to the versions the docs were built and checked with (Read the Docs installs these).
+sphinx==9.1.1
+pydata-sphinx-theme==0.23.0
+sphinx-design==0.7.0
+myst-parser==5.1.0
+sphinx-copybutton==0.5.2

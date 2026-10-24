@@ -1,0 +1,1330 @@
+{
+ "bimanual_lift": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "left_cube_pos": [
+    3
+   ],
+   "left_cube_quat": [
+    4
+   ],
+   "right_cube_pos": [
+    3
+   ],
+   "right_cube_quat": [
+    4
+   ],
+   "target_left_pos": [
+    3
+   ],
+   "target_right_pos": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_pick_place": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "goal_left_pos": [
+    3
+   ],
+   "goal_right_pos": [
+    3
+   ],
+   "left_cube_pos": [
+    3
+   ],
+   "left_cube_quat": [
+    4
+   ],
+   "right_cube_pos": [
+    3
+   ],
+   "right_cube_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_pick_place_mug": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "mug_angular_vel": [
+    3
+   ],
+   "mug_linear_vel": [
+    3
+   ],
+   "mug_pos": [
+    3
+   ],
+   "mug_quat": [
+    4
+   ],
+   "rack_pos": [
+    3
+   ],
+   "rack_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_push": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "goal_left_pos": [
+    3
+   ],
+   "goal_right_pos": [
+    3
+   ],
+   "left_cube_pos": [
+    3
+   ],
+   "left_cube_quat": [
+    4
+   ],
+   "right_cube_pos": [
+    3
+   ],
+   "right_cube_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_reach": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "target_left_pos": [
+    3
+   ],
+   "target_left_quat": [
+    4
+   ],
+   "target_right_pos": [
+    3
+   ],
+   "target_right_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_stack": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_a_pos": [
+    3
+   ],
+   "cube_a_quat": [
+    4
+   ],
+   "cube_b_pos": [
+    3
+   ],
+   "cube_b_quat": [
+    4
+   ],
+   "cube_c_pos": [
+    3
+   ],
+   "cube_c_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_stack_mid_air": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_a_pos": [
+    3
+   ],
+   "cube_a_quat": [
+    4
+   ],
+   "cube_b_pos": [
+    3
+   ],
+   "cube_b_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "close_window_spray": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "bottle_pos": [
+    3
+   ],
+   "bottle_quat": [
+    4
+   ],
+   "bottle_vel": [
+    3
+   ],
+   "circle_complete": [
+    1
+   ],
+   "circle_sector_coverage": [
+    1
+   ],
+   "circle_spray_steps": [
+    1
+   ],
+   "latch_q": [
+    1
+   ],
+   "nozzle_dir": [
+    3
+   ],
+   "nozzle_pos": [
+    3
+   ],
+   "paint_debug_spheres": [
+    1
+   ],
+   "pane_center": [
+    3
+   ],
+   "pane_coverage": [
+    1
+   ],
+   "pane_normal": [
+    3
+   ],
+   "pane_spray_complete": [
+    1
+   ],
+   "pane_spray_steps": [
+    1
+   ],
+   "pull_frac": [
+    1
+   ],
+   "sash_closed": [
+    1
+   ],
+   "sash_frac": [
+    1
+   ],
+   "sash_pos": [
+    3
+   ],
+   "sash_q": [
+    1
+   ],
+   "spray_active": [
+    1
+   ],
+   "trigger_q": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "drill_to_point": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "drill_pos": [
+    3
+   ],
+   "drill_quat": [
+    4
+   ],
+   "drill_tip_pos": [
+    3
+   ],
+   "drill_tip_quat": [
+    4
+   ],
+   "target_pos": [
+    3
+   ],
+   "target_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "lift": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_pos": [
+    3
+   ],
+   "cube_quat": [
+    4
+   ],
+   "target_pos": [
+    3
+   ]
+  },
+  "reward_shape": []
+ },
+ "make_coffee": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "machine_pos": [
+    3
+   ],
+   "machine_quat": [
+    4
+   ],
+   "mug_pos": [
+    3
+   ],
+   "mug_quat": [
+    4
+   ],
+   "mug_target_pos": [
+    3
+   ],
+   "mug_target_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "open_safe": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "dial_q": [
+    1
+   ],
+   "door_edge_pos": [
+    3
+   ],
+   "door_frac": [
+    1
+   ],
+   "door_pos": [
+    3
+   ],
+   "door_q": [
+    1
+   ],
+   "door_quat": [
+    4
+   ],
+   "handle_pos": [
+    3
+   ],
+   "handle_q": [
+    1
+   ],
+   "handle_turn": [
+    1
+   ],
+   "safe_pos": [
+    3
+   ],
+   "safe_quat": [
+    4
+   ],
+   "unlocked": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_pos": [
+    3
+   ],
+   "cube_quat": [
+    4
+   ],
+   "goal_pos": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place_duck": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "bowl_floor_z": [
+    1
+   ],
+   "bowl_inner_hi": [
+    2
+   ],
+   "bowl_inner_lo": [
+    2
+   ],
+   "bowl_inner_radius": [
+    1
+   ],
+   "bowl_pos": [
+    3
+   ],
+   "bowl_rim_z": [
+    1
+   ],
+   "duck_aabb_hi": [
+    3
+   ],
+   "duck_aabb_lo": [
+    3
+   ],
+   "duck_ang": [
+    3
+   ],
+   "duck_hand_contact": [
+    1
+   ],
+   "duck_head_pos": [
+    3
+   ],
+   "duck_in_bowl": [
+    1
+   ],
+   "duck_pos": [
+    3
+   ],
+   "duck_quat": [
+    4
+   ],
+   "duck_rest_ticks": [
+    1
+   ],
+   "duck_vel": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place_fruit": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "apple_ang": [
+    3
+   ],
+   "apple_pos": [
+    3
+   ],
+   "apple_quat": [
+    4
+   ],
+   "apple_vel": [
+    3
+   ],
+   "bowl_aabb_hi": [
+    3
+   ],
+   "bowl_aabb_lo": [
+    3
+   ],
+   "bowl_inner_hi": [
+    2
+   ],
+   "bowl_inner_lo": [
+    2
+   ],
+   "bowl_pos": [
+    3
+   ],
+   "bowl_quat": [
+    4
+   ],
+   "bowl_top_z": [
+    1
+   ],
+   "lemon_ang": [
+    3
+   ],
+   "lemon_pos": [
+    3
+   ],
+   "lemon_quat": [
+    4
+   ],
+   "lemon_vel": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place_mug": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "mug_ang": [
+    3
+   ],
+   "mug_pos": [
+    3
+   ],
+   "mug_quat": [
+    4
+   ],
+   "mug_vel": [
+    3
+   ],
+   "rack_aabb_hi": [
+    3
+   ],
+   "rack_aabb_lo": [
+    3
+   ],
+   "rack_inner_hi": [
+    2
+   ],
+   "rack_inner_lo": [
+    2
+   ],
+   "rack_pos": [
+    3
+   ],
+   "rack_quat": [
+    4
+   ],
+   "rack_top_z": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place_pan": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "mat_inner_hi": [
+    2
+   ],
+   "mat_inner_lo": [
+    2
+   ],
+   "mat_top_z": [
+    1
+   ],
+   "pan_aabb_hi": [
+    3
+   ],
+   "pan_aabb_lo": [
+    3
+   ],
+   "pan_ang": [
+    3
+   ],
+   "pan_pos": [
+    3
+   ],
+   "pan_quat": [
+    4
+   ],
+   "pan_vel": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pick_place_pan_platform": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "mat_inner_hi": [
+    2
+   ],
+   "mat_inner_lo": [
+    2
+   ],
+   "mat_top_z": [
+    1
+   ],
+   "pan_aabb_hi": [
+    3
+   ],
+   "pan_aabb_lo": [
+    3
+   ],
+   "pan_ang": [
+    3
+   ],
+   "pan_pos": [
+    3
+   ],
+   "pan_quat": [
+    4
+   ],
+   "pan_vel": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "pliers_in_jewelry_box": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "box_pos": [
+    3
+   ],
+   "box_quat": [
+    4
+   ],
+   "lid_frac": [
+    1
+   ],
+   "lid_q": [
+    1
+   ],
+   "pliers_aabb_hi": [
+    3
+   ],
+   "pliers_aabb_lo": [
+    3
+   ],
+   "pliers_ang": [
+    3
+   ],
+   "pliers_in_box_frame": [
+    3
+   ],
+   "pliers_inside": [
+    1
+   ],
+   "pliers_pos": [
+    3
+   ],
+   "pliers_quat": [
+    4
+   ],
+   "pliers_vel": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "push": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_pos": [
+    3
+   ],
+   "cube_quat": [
+    4
+   ],
+   "goal_pos": [
+    3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "put_bread_toaster": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "dial_q": [
+    1
+   ],
+   "lever_frac": [
+    1
+   ],
+   "lever_q": [
+    1
+   ],
+   "toast_aabb_hi": [
+    3
+   ],
+   "toast_aabb_lo": [
+    3
+   ],
+   "toast_ang": [
+    3
+   ],
+   "toast_in_slot": [
+    1
+   ],
+   "toast_in_toaster_frame": [
+    3
+   ],
+   "toast_pos": [
+    3
+   ],
+   "toast_quat": [
+    4
+   ],
+   "toast_vel": [
+    3
+   ],
+   "toaster_pos": [
+    3
+   ],
+   "toaster_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "reach": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "target_pos": [
+    3
+   ],
+   "target_quat": [
+    4
+   ]
+  },
+  "reward_shape": []
+ },
+ "spray_graffiti": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "can_pos": [
+    3
+   ],
+   "can_quat": [
+    4
+   ],
+   "can_vel": [
+    3
+   ],
+   "head_q": [
+    1
+   ],
+   "nozzle_dir": [
+    3
+   ],
+   "nozzle_pos": [
+    3
+   ],
+   "paint_coverage": [
+    1
+   ],
+   "paint_debug_spheres": [
+    1
+   ],
+   "paint_outside_frac": [
+    1
+   ],
+   "paper_pos": [
+    3
+   ],
+   "paper_quat": [
+    4
+   ],
+   "press_frac": [
+    1
+   ],
+   "spray_active": [
+    1
+   ],
+   "spray_hit_xy": [
+    2
+   ],
+   "stencil_center_xy": [
+    2
+   ],
+   "stencil_coverage": [
+    1
+   ],
+   "stencil_id": [
+    1
+   ],
+   "stencil_size": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "stack": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "cube_a_pos": [
+    3
+   ],
+   "cube_a_quat": [
+    4
+   ],
+   "cube_b_pos": [
+    3
+   ],
+   "cube_b_quat": [
+    4
+   ],
+   "cube_c_pos": [
+    3
+   ],
+   "cube_c_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "stow_in_safe": {
+  "action_dim": 28,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "dial_q": [
+    1
+   ],
+   "door_edge_pos": [
+    3
+   ],
+   "door_frac": [
+    1
+   ],
+   "door_pos": [
+    3
+   ],
+   "door_q": [
+    1
+   ],
+   "door_quat": [
+    4
+   ],
+   "handle_pos": [
+    3
+   ],
+   "handle_q": [
+    1
+   ],
+   "handle_turn": [
+    1
+   ],
+   "mug_aabb_hi": [
+    3
+   ],
+   "mug_aabb_lo": [
+    3
+   ],
+   "mug_in_safe_frame": [
+    3
+   ],
+   "mug_inside": [
+    1
+   ],
+   "mug_pos": [
+    3
+   ],
+   "mug_quat": [
+    4
+   ],
+   "mug_vel": [
+    3
+   ],
+   "safe_pos": [
+    3
+   ],
+   "safe_quat": [
+    4
+   ],
+   "unlocked": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "tool_hang": {
+  "action_dim": 22,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "hook_frame_pos": [
+    3
+   ],
+   "hook_frame_quat": [
+    4
+   ],
+   "stand_pos": [
+    3
+   ],
+   "stand_quat": [
+    4
+   ],
+   "wrench_pos": [
+    3
+   ],
+   "wrench_quat": [
+    4
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ }
+}
