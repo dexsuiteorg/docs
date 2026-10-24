@@ -184,8 +184,8 @@ def _():
 def _():
     e1 = ds.make("lift", manipulator="trossen_vx300s", cameras=None); a1 = tuple(e1.action_space.shape); e1.close()
     e2 = ds.make("lift", manipulator="so_100", cameras=None); a2 = tuple(e2.action_space.shape); e2.close()
-    e3 = ds.make("lift", manipulator="gen3", gripper="leap", cameras=None); a3 = tuple(e3.action_space.shape); e3.close()
-    return dict(trossen=a1, so_100=a2, gen3_leap=a3)
+    e3 = ds.make("lift", manipulator="ur5", gripper="leap", cameras=None); a3 = tuple(e3.action_space.shape); e3.close()
+    return dict(trossen=a1, so_100=a2, ur5_leap=a3)
 
 
 if __name__ == "__main__":

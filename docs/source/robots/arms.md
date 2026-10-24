@@ -15,25 +15,21 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>panda_nohand.xml</code>, license Apache-2.0 (MuJoCo Menagerie)</dd>
-<dt>End-effectors</dt><dd>`allegro`, `shadow`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `franka_umi_tacticle`, `sharpa`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `sharpa`, `shadow`</dd>
 </dl>
 
 (franka_fr3)=
 ### Franka FR3
 
-
+<img class="ds-render" style="max-width:360px" src="../_static/catalog/arm_franka_fr3.webp" alt="Franka FR3">
 
 <dl class="ds-spec">
 <dt>Key</dt><dd><code>franka_fr3</code></dd>
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>fr3.xml</code>, license Apache-2.0</dd>
-<dt>End-effectors</dt><dd>none yet</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `sharpa`, `shadow`</dd>
 </dl>
-
-```{warning}
-No end-effector adapters yet, so it cannot be built.
-```
 
 (gen3)=
 ### Kinova Gen3
@@ -45,7 +41,7 @@ No end-effector adapters yet, so it cannot be built.
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>gen3.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (kuka)=
@@ -58,12 +54,8 @@ No end-effector adapters yet, so it cannot be built.
 <dt>Maker</dt><dd>KUKA</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>iiwa14.xml</code>, license BSD-3 (Drake)</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
-
-```{warning}
-The adapters for this arm currently mount end-effectors at the wrong angle. Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.
-```
 
 (sawyer)=
 ### Rethink Sawyer
@@ -75,12 +67,8 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Rethink Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>sawyer.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
-
-```{warning}
-The adapters for this arm currently mount end-effectors at the wrong angle. Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.
-```
 
 (ur5)=
 ### UR5e
@@ -92,7 +80,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur5e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `leap`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`</dd>
 </dl>
 
 (ur10)=
@@ -105,7 +93,7 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur10e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (lite6)=
@@ -118,12 +106,8 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>UFactory</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>lite6.xml</code>, license BSD-style</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
-
-```{warning}
-The adapters for this arm currently mount end-effectors at the wrong angle. Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.
-```
 
 (link6)=
 ### Link6
@@ -135,12 +119,8 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>link6_best.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
-
-```{warning}
-The adapters for this arm currently mount end-effectors at the wrong angle. Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.
-```
 
 (z1)=
 ### Unitree Z1
@@ -152,12 +132,8 @@ The adapters for this arm currently mount end-effectors at the wrong angle. Use 
 <dt>Maker</dt><dd>Unitree</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>z1.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`allegro`, `robotiq`, `ability`, `barrett`, `inspire`, `dclaw`, `schunk`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
-
-```{warning}
-The adapters for this arm currently mount end-effectors at the wrong angle. Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.
-```
 
 ## Integrated robots
 

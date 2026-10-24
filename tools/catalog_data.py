@@ -3,6 +3,7 @@
 Every value here was read from the task, model and adapter files; file references are kept next to each entry so the
 next person can re-check them. Randomization ranges are given only where they were verified line by line.
 """
+from pathlib import Path
 
 TASKS = [
     # ---- Track 1 (benchmark): gripper and Allegro hand --------------------------------------------------------------
@@ -177,16 +178,15 @@ IN_PROGRESS = [  # registered but not yet usable from ds.make; listed so nobody 
 
 ARMS = [  # modular: take any end-effector that has an adapter for them
     dict(key="franka", name="Franka Panda", maker="Franka Robotics", dof=7, asset="panda_nohand.xml", license="Apache-2.0 (MuJoCo Menagerie)"),
-    dict(key="franka_fr3", name="Franka FR3", maker="Franka Robotics", dof=7, asset="fr3.xml", license="Apache-2.0",
-         note="No end-effector adapters yet, so it cannot be built."),
+    dict(key="franka_fr3", name="Franka FR3", maker="Franka Robotics", dof=7, asset="fr3.xml", license="Apache-2.0"),
     dict(key="gen3", name="Kinova Gen3", maker="Kinova", dof=7, asset="gen3.xml", license="BSD-3"),
-    dict(key="kuka", name="KUKA LBR iiwa 14", maker="KUKA", dof=7, asset="iiwa14.xml", license="BSD-3 (Drake)", mount_issue=True),
-    dict(key="sawyer", name="Rethink Sawyer", maker="Rethink Robotics", dof=7, asset="sawyer.xml", license="not stated", mount_issue=True),
+    dict(key="kuka", name="KUKA LBR iiwa 14", maker="KUKA", dof=7, asset="iiwa14.xml", license="BSD-3 (Drake)"),
+    dict(key="sawyer", name="Rethink Sawyer", maker="Rethink Robotics", dof=7, asset="sawyer.xml", license="not stated"),
     dict(key="ur5", name="UR5e", maker="Universal Robots", dof=6, asset="ur5e.xml", license="BSD-3"),
     dict(key="ur10", name="UR10e", maker="Universal Robots", dof=6, asset="ur10e.xml", license="BSD-3"),
-    dict(key="lite6", name="UFactory Lite 6", maker="UFactory", dof=6, asset="lite6.xml", license="BSD-style", mount_issue=True),
-    dict(key="link6", name="Link6", maker="Kinova", dof=6, asset="link6_best.xml", license="BSD-3", mount_issue=True),
-    dict(key="z1", name="Unitree Z1", maker="Unitree", dof=6, asset="z1.xml", license="not stated", mount_issue=True),
+    dict(key="lite6", name="UFactory Lite 6", maker="UFactory", dof=6, asset="lite6.xml", license="BSD-style"),
+    dict(key="link6", name="Link6", maker="Kinova", dof=6, asset="link6_best.xml", license="BSD-3"),
+    dict(key="z1", name="Unitree Z1", maker="Unitree", dof=6, asset="z1.xml", license="not stated"),
 ]
 
 INTEGRATED = [  # built-in gripper, used as is
@@ -218,12 +218,16 @@ END_EFFECTORS = [
     dict(key="shadow", name="Shadow Hand", kind="Five-finger hand", dof=24, fingers=5, variants=["shadow_left", "shadow_right"], license="Apache-2.0"),
 ]
 
-# gripper keys with an adapter on each arm (dexsuite/models/manipulators/<arm>/<arm>_adapters.yaml)
-_T = ["allegro", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "shadow"]
-ADAPTERS = {
-    "franka": ["allegro", "shadow", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk", "franka_umi_tacticle", "sharpa"],
-    "franka_fr3": [],
-    "gen3": _T, "kuka": _T, "link6": _T, "ur10": _T, "lite6": _T, "sawyer": _T, "z1": _T,
-    "ur5": ["allegro", "leap", "robotiq", "ability", "barrett", "inspire", "dclaw", "schunk"],
-    "floating": ["allegro", "sharpa"],
-}
+# end-effectors of the catalog with an entry in each arm's adapter file
+# (dexsuite/models/manipulators/<arm>/<arm>_adapters.yaml), read from the code
+import yaml  # noqa: E402
+
+_MANIPULATORS = Path("/efs/projects/fudi/simulation/Dexsuite/dexsuite/models/manipulators")
+
+
+def _adapters(arm):
+    keys = set(yaml.safe_load((_MANIPULATORS / arm / f"{arm}_adapters.yaml").read_text()))
+    return [e["key"] for e in END_EFFECTORS if e["key"] in keys]
+
+
+ADAPTERS = {a: _adapters(a) for a in [x["key"] for x in ARMS] + ["floating"]}

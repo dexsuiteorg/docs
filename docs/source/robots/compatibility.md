@@ -3,20 +3,20 @@
 <p class="ds-lede">Which end-effector mounts on which arm. A pair is available when the arm's adapter file has an entry
 for the end-effector.</p>
 
-✓ available, ⚠ available but the adapter mounts it at the wrong angle today, empty: no adapter.
+✓ available, empty: no adapter.
 
 | Arm | `robotiq` | `franka_umi_tacticle` | `barrett` | `dclaw` | `inspire` | `ability` | `schunk` | `allegro` | `leap` | `sharpa` | `shadow` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | `franka` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| `franka_fr3` |  |  |  |  |  |  |  |  |  |  |  |
+| `franka_fr3` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `gen3` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
-| `kuka` | ⚠ |  | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ |  |  | ⚠ |
-| `sawyer` | ⚠ |  | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ |  |  | ⚠ |
+| `kuka` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
+| `sawyer` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
 | `ur5` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |
 | `ur10` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
-| `lite6` | ⚠ |  | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ |  |  | ⚠ |
-| `link6` | ⚠ |  | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ |  |  | ⚠ |
-| `z1` | ⚠ |  | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ | ⚠ |  |  | ⚠ |
+| `lite6` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
+| `link6` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
+| `z1` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
 | `floating` |  |  |  |  |  |  |  | ✓ |  | ✓ |  |
 
 Adapters live next to each arm in `dexsuite/models/manipulators/<arm>/<arm>_adapters.yaml`. Each entry places an

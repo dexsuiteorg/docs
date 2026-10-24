@@ -2,12 +2,9 @@
 
 ## Installing
 
-**The first `step` fails because no QP solver is available.**
-The default arm controller solves its inverse kinematics with `quadprog`, which Mink does not install. Run
-`pip install quadprog`.
-
 **Recording fails with `ModuleNotFoundError: lerobot`.**
-`pip install lerobot`. The logger and the datasets use it, but `pip install -e .` does not pull it in.
+Install the datasets extra, `pip install -e ".[datasets]"`. It pins LeRobot 0.4.4: the logger relies on that version's
+dataset layout, and LeRobot 0.6 changed it.
 
 **Some robots are missing after `pip install dexsuite`.**
 Install from source with `pip install -e .`. The source checkout carries every robot and object asset.

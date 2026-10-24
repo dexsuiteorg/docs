@@ -22,6 +22,7 @@ How the parts are joined is described in [Robots](../concepts/robots.md). Which 
 
 <div class="ds-grid">
 <a class="ds-tile" href="arms.html#franka"><img src="../_static/catalog/arm_franka.webp" alt="Franka Panda" loading="lazy"><div class="ds-tile-text"><b>Franka Panda</b><small>7 DoF arm</small></div></a>
+<a class="ds-tile" href="arms.html#franka_fr3"><img src="../_static/catalog/arm_franka_fr3.webp" alt="Franka FR3" loading="lazy"><div class="ds-tile-text"><b>Franka FR3</b><small>7 DoF arm</small></div></a>
 <a class="ds-tile" href="arms.html#gen3"><img src="../_static/catalog/arm_gen3.webp" alt="Kinova Gen3" loading="lazy"><div class="ds-tile-text"><b>Kinova Gen3</b><small>7 DoF arm</small></div></a>
 <a class="ds-tile" href="arms.html#kuka"><img src="../_static/catalog/arm_kuka.webp" alt="KUKA LBR iiwa 14" loading="lazy"><div class="ds-tile-text"><b>KUKA LBR iiwa 14</b><small>7 DoF arm</small></div></a>
 <a class="ds-tile" href="arms.html#sawyer"><img src="../_static/catalog/arm_sawyer.webp" alt="Rethink Sawyer" loading="lazy"><div class="ds-tile-text"><b>Rethink Sawyer</b><small>7 DoF arm</small></div></a>

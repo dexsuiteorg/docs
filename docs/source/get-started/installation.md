@@ -19,30 +19,28 @@ git clone https://github.com/dexsuiteorg/dexsuite.git
 cd dexsuite
 python -m venv .venv && source .venv/bin/activate      # or conda, or uv venv
 pip install -e .
-pip install quadprog                                     # QP solver used by the default arm controller
 ```
 
-`pip install -e .` installs the core dependencies: PyTorch, Genesis, Mink (inverse kinematics), Gymnasium, NumPy,
-PyYAML, cattrs and pynput.
+`pip install -e .` installs the core dependencies: PyTorch, Genesis, Mink with the `quadprog` solver (inverse
+kinematics for the default arm controller), Gymnasium, NumPy, PyYAML, cattrs and pynput.
 
-```{important}
-The default arm controller, `osc_pose`, solves its inverse kinematics with `quadprog`. Mink does not install a QP
-solver on its own, so add `quadprog` as above, otherwise the first `step` fails with a missing-solver error.
+```{note}
+Install from the clone with `-e`. The robot, hand and object models live in the repository, about 1 GB, and an
+editable install reads them in place.
 ```
 
 ## Optional extras
 
-Install only what you use.
+Install only what you use, or everything with `pip install -e ".[all]"`.
 
 | Extra | Installs | Needed for |
 |---|---|---|
+| `pip install -e ".[datasets]"` | LeRobot 0.4.4, `h5py` | [recording demonstrations](../teleop/recording.md), loading the datasets, HDF5 export for robomimic |
 | `pip install -e ".[spacemouse]"` | `evdev` (Linux) or `hidapi` | [SpaceMouse](../teleop/devices.md#spacemouse) |
-| `pip install -e ".[vive]"` | `openvr` | [Vive trackers and controllers](../teleop/devices.md#vive) over SteamVR |
+| `pip install -e ".[vive]"` | `openvr`, `pyzmq` | [Vive trackers and controllers](../teleop/devices.md#vive), over SteamVR or streamed from another machine |
 | `pip install -e ".[manus]"` | `websockets` | [Manus glove](../teleop/devices.md#manus-glove) through GeoRT |
-| `pip install -e ".[devices]"` | all of the above | every teleoperation device |
-| `pip install -e ".[datasets]"` | `h5py` | HDF5 export for robomimic |
-| `pip install lerobot` | LeRobot | recording demonstrations and loading the datasets |
-| `pip install pyzmq` | ZeroMQ | Vive poses streamed from another machine |
+| `pip install -e ".[devices]"` | every device above | every teleoperation device |
+| `pip install -e ".[all]"` | `datasets` and `devices` | everything |
 
 ## Check the install
 
@@ -55,8 +53,8 @@ print(env.action_space.shape)          # (7,): 6 for the arm, 1 for the gripper
 print(list(obs["state"]["gripper"]))   # ['qpos', 'qvel', 'qtorque', 'tcp_pos', 'tcp_quat']
 ```
 
-The first `ds.make` in a process initializes Genesis and compiles its kernels, which takes a little while. Later calls
-reuse it.
+The first `ds.make` on a machine compiles the Genesis kernels, which takes about a minute. They are cached, so later
+runs start in seconds.
 
 ## Headless machines
 

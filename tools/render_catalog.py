@@ -7,7 +7,8 @@ Transparent backgrounds, no floor shadow, the project page's studio lights and g
 
     .venv-dexsuite/bin/python tools/render_catalog.py [--only arm_franka ee_allegro ...] [--gpu 0]
 
-Reads the Genesis exports of the website pipeline (dexsuite_website/v2/work/robots/<arm>__<grip>/scene.json),
+Reads the Genesis exports of the website pipeline (dexsuite_website/v2/work/robots/<arm>__<grip>/scene.json), or the
+docs' own re-exports in runs/docs_catalog/exports when one exists (arms whose home pose or mount changed since),
 renders with dexsuite_website/v2/tools/render_replay.py (Blender Cycles), and writes
 docs/source/_static/catalog/<name>.webp (900 px, transparent).
 """
@@ -26,7 +27,7 @@ from PIL import Image
 
 DOCS = Path(__file__).resolve().parents[1]
 SITE = Path("/efs/projects/fudi/dexsuite_website/v2")
-ROBOTS = SITE / "work/robots"
+ROBOTS = [Path("/efs/projects/fudi/runs/docs_catalog/exports"), SITE / "work/robots"]   # first match wins
 RENDER = SITE / "tools/render_replay.py"
 BLENDER_PY = "/tmp/hoirfig/bpyenv/bin/python"
 OUT = DOCS / "docs/source/_static/catalog"
@@ -73,7 +74,7 @@ def render(p, gpu, log):
 
 def one(name, gpu):
     exp, roles, (az, el) = ASSETS[name]
-    scene = ROBOTS / exp / "scene.json"
+    scene = next(d / exp / "scene.json" for d in ROBOTS if (d / exp / "scene.json").exists())
     c, ext = centre(scene, roles)
     a, e = math.radians(az), math.radians(el)
     d = np.array([math.cos(a) * math.cos(e), math.sin(a) * math.cos(e), math.sin(e)])

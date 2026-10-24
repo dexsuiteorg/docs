@@ -88,7 +88,7 @@ from dexsuite.devices import ViveTrackerZMQClient
 tracker = ViveTrackerZMQClient(endpoint="tcp://<steamvr-host>:5559", topic="vive.tracker")
 ```
 
-`pip install pyzmq` on both sides. Controllers work the same way with `ViveController` and
+Install the `vive` extra on both machines, it brings `openvr` and `pyzmq`. Controllers work the same way with `ViveController` and
 `python -m dexsuite.devices.vive_controller_zmq_server` (port 5558, topic `vive.controller`); the trigger opens and
 closes the gripper.
 

@@ -222,7 +222,7 @@ def robot_tile(img, name, sub, href):
 
 
 def robots_index():
-    arms = "\n".join(robot_tile(f"arm_{a['key']}", a["name"], f"{a['dof']} DoF arm", f"arms.html#{a['key']}") for a in ARMS if a["key"] != "franka_fr3")
+    arms = "\n".join(robot_tile(f"arm_{a['key']}", a["name"], f"{a['dof']} DoF arm", f"arms.html#{a['key']}") for a in ARMS)
     integ = "\n".join(robot_tile(f"robot_{r['key']}", r["name"], f"{r['dof']} DoF", f"arms.html#{r['key']}") for r in INTEGRATED)
     ees = "\n".join(robot_tile(f"ee_{e['key']}", e["name"], f"{e['kind']}, {e['dof']} DoF", f"end-effectors.html#{e['key']}") for e in END_EFFECTORS)
     return f"""# Robots
@@ -285,14 +285,10 @@ def arms_page():
     for a in ARMS:
         ees = ADAPTERS.get(a["key"], [])
         mounts = ", ".join(f"`{k}`" for k in ees) if ees else "none yet"
-        img = (f'<img class="ds-render" style="max-width:360px" src="../_static/catalog/arm_{a["key"]}.webp" alt="{esc(a["name"])}">'
-               if a["key"] != "franka_fr3" else "")
+        img = f'<img class="ds-render" style="max-width:360px" src="../_static/catalog/arm_{a["key"]}.webp" alt="{esc(a["name"])}">'
         note = ""
         if a.get("note"):
             note = f"\n```{{warning}}\n{a['note']}\n```\n"
-        elif a.get("mount_issue"):
-            note = ("\n```{warning}\nThe adapters for this arm currently mount end-effectors at the wrong angle. "
-                    "Use the Franka, Gen3, UR5e or UR10e until the adapter files are fixed.\n```\n")
         parts.append(f"""
 ({a['key']})=
 ### {a['name']}
@@ -376,17 +372,16 @@ def compat_page():
     cols = [e["key"] for e in END_EFFECTORS]
     head = "| Arm | " + " | ".join(f"`{c}`" for c in cols) + " |\n|---|" + "---|" * len(cols)
     rows = []
-    issue = {a["key"] for a in ARMS if a.get("mount_issue")}
     for a in [x["key"] for x in ARMS] + ["floating"]:
         ks = ADAPTERS.get(a, [])
-        mark = lambda c: ("⚠" if a in issue else "✓") if c in ks else ""  # noqa: E731
+        mark = lambda c: "✓" if c in ks else ""  # noqa: E731
         rows.append(f"| `{a}` | " + " | ".join(mark(c) for c in cols) + " |")
     return f"""# Compatibility
 
 <p class="ds-lede">Which end-effector mounts on which arm. A pair is available when the arm's adapter file has an entry
 for the end-effector.</p>
 
-✓ available, ⚠ available but the adapter mounts it at the wrong angle today, empty: no adapter.
+✓ available, empty: no adapter.
 
 {head}
 {chr(10).join(rows)}
