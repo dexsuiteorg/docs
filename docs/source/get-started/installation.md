@@ -15,8 +15,8 @@ and object asset comes with it.</p>
 ## Install from source
 
 ```bash
-git clone https://github.com/dexsuiteorg/dexsuite.git
-cd dexsuite
+git clone https://github.com/anashoussaini/Dexsuite.git
+cd Dexsuite
 python -m venv .venv && source .venv/bin/activate      # or conda, or uv venv
 pip install -e .
 ```
