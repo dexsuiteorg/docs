@@ -31,12 +31,12 @@ html_js_files = ["js/dexsuite.js"]
 html_theme_options = {
     "logo": {
         "image_light": "_static/brand/wordmark.svg",
-        "image_dark": "_static/brand/wordmark.svg",
+        "image_dark": "_static/brand/wordmark-dark.svg",
         "alt_text": "DexSuite",
     },
     "header_links_before_dropdown": 7,
     "navbar_align": "left",
-    "navbar_end": ["navbar-icon-links"],
+    "navbar_end": ["theme-switcher", "navbar-icon-links"],
     "navbar_persistent": ["search-button"],
     "show_prev_next": True,
     "show_toc_level": 2,
@@ -47,6 +47,7 @@ html_theme_options = {
     "footer_start": ["copyright"],
     "footer_end": [],
     "pygments_light_style": "friendly",
+    "pygments_dark_style": "github-dark",
     "icon_links": [
         {"name": "Project page", "url": "https://dexsuiteorg.github.io/", "icon": "fa-solid fa-globe", "type": "fontawesome"},
         {"name": "Datasets on Hugging Face", "url": "https://huggingface.co/dexsuite", "icon": "fa-solid fa-database", "type": "fontawesome"},
@@ -54,7 +55,7 @@ html_theme_options = {
     ],
 }
 html_context = {
-    "default_mode": "light",          # the project page is light only, so are the docs
+    "default_mode": "auto",           # follow the reader's system, with a switch in the header
     "github_user": "dexsuiteorg",
     "github_repo": "docs",
     "github_version": "main",

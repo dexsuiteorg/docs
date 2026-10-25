@@ -2,7 +2,8 @@
 """DexSuite wordmark as SVG outlines (Inter Bold, -0.05em tracking, the website's blue gradient).
 
     .venv-dexsuite/bin/python tools/make_wordmark.py
-writes docs/source/_static/brand/wordmark.svg (navbar logo) and wordmark-white.svg (for dark backgrounds).
+writes docs/source/_static/brand/wordmark.svg (navbar logo, light mode), wordmark-dark.svg (the same gradient lifted
+for dark mode) and wordmark-white.svg.
 """
 from pathlib import Path
 
@@ -35,6 +36,9 @@ for name, fill, defs in (
     ("wordmark.svg", "url(#g)", '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0.18">'
                                 '<stop offset="0" stop-color="#1468b8"/><stop offset="0.6" stop-color="#289be4"/>'
                                 '<stop offset="1" stop-color="#45b2ee"/></linearGradient></defs>'),
+    ("wordmark-dark.svg", "url(#g)", '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0.18">'   # lifted for dark
+                                     '<stop offset="0" stop-color="#3d8fd6"/><stop offset="0.6" stop-color="#4fb0ef"/>'
+                                     '<stop offset="1" stop-color="#7cc8f5"/></linearGradient></defs>'),
     ("wordmark-white.svg", "#ffffff", ""),
 ):
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{left:.0f} {top:.0f} {w:.0f} {bottom - top:.0f}" role="img" aria-label="DexSuite">'

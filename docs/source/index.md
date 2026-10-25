@@ -9,7 +9,8 @@ myst:
 
 <div class="ds-hero">
 <div>
-<img class="ds-wordmark" src="_static/brand/wordmark.svg" alt="DexSuite">
+<img class="ds-wordmark only-light" src="_static/brand/wordmark.svg" alt="DexSuite">
+<img class="ds-wordmark only-dark" src="_static/brand/wordmark-dark.svg" alt="DexSuite">
 <p class="ds-tagline">Dexterous manipulation.<br><span>All in one framework.</span></p>
 <p>DexSuite is a simulation framework for dexterous manipulation built on <a href="https://genesis-embodied-ai.github.io/">Genesis</a>.
 It brings the robots, the tasks, teleoperation, tactile sensing, the data and the evaluation into one stack, and every
