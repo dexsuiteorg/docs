@@ -7,8 +7,8 @@ for the end-effector.</p>
 
 | Arm | `robotiq` | `franka_umi_tacticle` | `barrett` | `dclaw` | `inspire` | `ability` | `schunk` | `allegro` | `leap` | `sharpa` | `shadow` |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `franka` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| `franka_fr3` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `franka` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  | ✓ |
+| `franka_fr3` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  | ✓ |
 | `gen3` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
 | `kuka` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |
 | `sawyer` | ✓ |  | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |  |  | ✓ |

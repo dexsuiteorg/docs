@@ -7,12 +7,14 @@ Install the datasets extra, `pip install "dexsuite[datasets]"`. It pins LeRobot 
 dataset layout, and LeRobot 0.6 changed it.
 
 **Saving an episode fails with `TypeError: only 0-dimensional arrays can be converted to Python scalars`.**
-NumPy 2.4 refuses what LeRobot 0.4.4 hands to `datasets` when it writes an episode. The datasets extra pins
-`numpy<2.4`; reinstall it with `pip install "dexsuite[datasets]"`.
+That is dexsuite 0.1.0 with NumPy 2.4: LeRobot 0.4.4 hands `datasets` one-element arrays when it writes an episode.
+From 0.1.1 the logger handles it; upgrade with `pip install -U "dexsuite[datasets]"`.
 
-**A prototype task or an object model is missing after `pip install dexsuite`.**
-The package ships every robot and the assets of every task. The prototype tasks and the objects no task uses yet come
-with the repository: [install from source](../get-started/installation.md#install-from-source) with `pip install -e .`.
+**A task is missing after `pip install dexsuite`.**
+The package ships every robot, every benchmark task and most of the others. Tasks marked *from source* in the
+[catalog](../tasks/index.md) run from the `fudi` branch for now (`git clone -b fudi`, then `pip install -e .`). The
+prototype tasks and the objects no task uses yet come with the repository:
+[install from source](../get-started/installation.md#install-from-source).
 
 ## Making environments
 

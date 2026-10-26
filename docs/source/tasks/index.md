@@ -39,12 +39,12 @@ Further tasks with a success check, outside the benchmark.
 <div class="ds-grid wide">
 <a class="ds-tile" href="make_coffee.html"><img src="../_static/tasks/make_coffee.webp" alt="Make Coffee" loading="lazy"><div class="ds-tile-text"><b>Make Coffee</b><small><code>make_coffee</code></small></div></a>
 <a class="ds-tile" href="tool_hang.html"><img src="../_static/tasks/tool_hang.webp" alt="Tool Hang" loading="lazy"><div class="ds-tile-text"><b>Tool Hang</b><small><code>tool_hang</code></small></div></a>
-<a class="ds-tile" href="pick_place_pan_platform.html"><img src="../_static/tasks/pick_place_pan_platform.webp" alt="Move Pan to Platform" loading="lazy"><div class="ds-tile-text"><b>Move Pan to Platform</b><small><code>pick_place_pan_platform</code></small></div></a>
-<a class="ds-tile" href="pick_place_duck.html"><img src="../_static/tasks/pick_place_duck.webp" alt="Duck in Bowl" loading="lazy"><div class="ds-tile-text"><b>Duck in Bowl</b><small><code>pick_place_duck</code></small></div></a>
-<a class="ds-tile" href="open_safe.html"><img src="../_static/tasks/open_safe.webp" alt="Open Safe" loading="lazy"><div class="ds-tile-text"><b>Open Safe</b><small><code>open_safe</code></small></div></a>
-<a class="ds-tile" href="stow_in_safe.html"><img src="../_static/tasks/stow_in_safe.webp" alt="Stow in Safe" loading="lazy"><div class="ds-tile-text"><b>Stow in Safe</b><small><code>stow_in_safe</code></small></div></a>
-<a class="ds-tile" href="pliers_in_jewelry_box.html"><img src="../_static/tasks/pliers_in_jewelry_box.webp" alt="Pliers in Jewelry Box" loading="lazy"><div class="ds-tile-text"><b>Pliers in Jewelry Box</b><small><code>pliers_in_jewelry_box</code></small></div></a>
-<a class="ds-tile" href="close_window_spray.html"><img src="../_static/tasks/close_window_spray.webp" alt="Close Window and Spray" loading="lazy"><div class="ds-tile-text"><b>Close Window and Spray</b><small><code>close_window_spray</code></small></div></a>
+<a class="ds-tile" href="pick_place_pan_platform.html"><img src="../_static/tasks/pick_place_pan_platform.webp" alt="Move Pan to Platform" loading="lazy"><div class="ds-tile-text"><b>Move Pan to Platform</b><small><code>pick_place_pan_platform</code> · from source</small></div></a>
+<a class="ds-tile" href="pick_place_duck.html"><img src="../_static/tasks/pick_place_duck.webp" alt="Duck in Bowl" loading="lazy"><div class="ds-tile-text"><b>Duck in Bowl</b><small><code>pick_place_duck</code> · from source</small></div></a>
+<a class="ds-tile" href="open_safe.html"><img src="../_static/tasks/open_safe.webp" alt="Open Safe" loading="lazy"><div class="ds-tile-text"><b>Open Safe</b><small><code>open_safe</code> · from source</small></div></a>
+<a class="ds-tile" href="stow_in_safe.html"><img src="../_static/tasks/stow_in_safe.webp" alt="Stow in Safe" loading="lazy"><div class="ds-tile-text"><b>Stow in Safe</b><small><code>stow_in_safe</code> · from source</small></div></a>
+<a class="ds-tile" href="pliers_in_jewelry_box.html"><img src="../_static/tasks/pliers_in_jewelry_box.webp" alt="Pliers in Jewelry Box" loading="lazy"><div class="ds-tile-text"><b>Pliers in Jewelry Box</b><small><code>pliers_in_jewelry_box</code> · from source</small></div></a>
+<a class="ds-tile" href="close_window_spray.html"><img src="../_static/tasks/close_window_spray.webp" alt="Close Window and Spray" loading="lazy"><div class="ds-tile-text"><b>Close Window and Spray</b><small><code>close_window_spray</code> · from source</small></div></a>
 </div>
 
 ## Bimanual tasks

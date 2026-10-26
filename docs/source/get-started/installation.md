@@ -1,7 +1,7 @@
 # Installation
 
 <p class="ds-lede">DexSuite is a Python package on top of the Genesis simulator. One <code>pip install</code> brings
-every robot, every hand and the assets of every task.</p>
+every robot, every hand and the benchmark tasks.</p>
 
 ## Requirements
 
@@ -9,7 +9,10 @@ every robot, every hand and the assets of every task.</p>
 <dt>Python</dt><dd>3.10 or newer</dd>
 <dt>Simulator</dt><dd>Genesis <code>genesis-world==0.4.3</code>, installed as a dependency</dd>
 <dt>GPU</dt><dd>A CUDA GPU. Without one, Genesis falls back to the CPU, which is fine for a quick check but slow.</dd>
-<dt>Display</dt><dd>Only for the interactive viewer. Headless machines render cameras throu## Install
+<dt>Display</dt><dd>Only for the interactive viewer. Headless machines render cameras through EGL.</dd>
+</dl>
+
+## Install
 
 ```bash
 python -m venv .venv && source .venv/bin/activate      # or conda, or uv venv
@@ -18,12 +21,13 @@ pip install dexsuite
 
 This installs the core dependencies: PyTorch, Genesis, Mink with the `quadprog` solver (inverse kinematics for the
 default arm controller), Gymnasium, NumPy, PyYAML, cattrs and pynput. The package carries every arm, hand and integrated
-robot and the models of every task, about 90 MB.
+robot, and the models of every benchmark task and most of the others, about 100 MB.
 
 ## Install from source
 
-To change the code, or for the prototype tasks and the full object library (the objects no task uses yet), install
-the repository in editable mode:
+To change the code, for the prototype tasks and the full object library (the objects no task uses yet), install the
+repository in editable mode. Tasks marked *from source* in the catalog are on the `fudi` branch for now
+(`git clone -b fudi`).
 
 ```bash
 git clone https://github.com/anashoussaini/Dexsuite.git
@@ -32,9 +36,6 @@ pip install -e .
 ```
 
 An editable install reads the models in place from the clone.
-
-them in place.
-```
 
 ## Optional extras
 

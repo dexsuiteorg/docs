@@ -15,7 +15,7 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>panda_nohand.xml</code>, license Apache-2.0 (MuJoCo Menagerie)</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `sharpa`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
 </dl>
 
 (franka_fr3)=
@@ -28,7 +28,7 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>fr3.xml</code>, license Apache-2.0</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `sharpa`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
 </dl>
 
 (gen3)=

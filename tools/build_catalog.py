@@ -15,7 +15,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from catalog_data import ADAPTERS, ARMS, END_EFFECTORS, FLOATING, IN_PROGRESS, INTEGRATED, TASKS  # noqa: E402
+from catalog_data import ADAPTERS, ARMS, END_EFFECTORS, FLOATING, IN_PROGRESS, INTEGRATED, SOURCE_ONLY, TASKS  # noqa: E402
 
 SRC = Path(__file__).resolve().parents[1] / "docs/source"
 FACTS = Path(__file__).parent / "task_facts.json"          # tools/check_tasks.py: what each snippet really returns
@@ -140,6 +140,10 @@ def task_page(t, res):
     dl = "\n".join(f"<dt>{k}</dt><dd>{v}</dd>" for k, v in spec)
     order = "\n".join(f"{i}. {s}" for i, s in enumerate(t["order"], 1))
     notes = "".join(f"\n```{{note}}\n{n}\n```\n" for n in t.get("notes", []))
+    if t["key"] in SOURCE_ONLY:
+        notes = ("\n```{important}\nNot in the pip package yet. This task runs from the `fudi` branch of the repository:\n"
+                 "`git clone -b fudi https://github.com/anashoussaini/Dexsuite.git`, then `pip install -e .` in the clone.\n```\n"
+                 + notes)
     return f"""---
 myst:
   html_meta:
@@ -181,7 +185,8 @@ obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
 
 def tile(t):
     return (f'<a class="ds-tile" href="{t["key"]}.html"><img src="../_static/tasks/{t["key"]}.webp" alt="{esc(t["name"])}" loading="lazy">'
-            f'<div class="ds-tile-text"><b>{esc(t["name"])}</b><small><code>{t["key"]}</code></small></div></a>')
+            f'<div class="ds-tile-text"><b>{esc(t["name"])}</b><small><code>{t["key"]}</code>'
+            f'{" · from source" if t["key"] in SOURCE_ONLY else ""}</small></div></a>')
 
 
 def tasks_index():

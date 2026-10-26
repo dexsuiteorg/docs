@@ -143,7 +143,7 @@ joint, so the gripper part of the action has one entry per actuated degree of fr
 <dt>Actuated DoF</dt><dd>22</dd>
 <dt>Fingers</dt><dd>5</dd>
 <dt>Variants</dt><dd><code>sharpa_left</code>, <code>sharpa_right</code>, <code>sharpa_fardexbot</code></dd>
-<dt>Mounts on</dt><dd><code>franka</code>, <code>franka_fr3</code>, <code>floating</code></dd>
+<dt>Mounts on</dt><dd><code>floating</code></dd>
 <dt>Model license</dt><dd>not stated</dd>
 </dl>
 

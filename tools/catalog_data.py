@@ -220,14 +220,30 @@ END_EFFECTORS = [
 
 # end-effectors of the catalog with an entry in each arm's adapter file
 # (dexsuite/models/manipulators/<arm>/<arm>_adapters.yaml), read from the code
+import re  # noqa: E402
+import subprocess  # noqa: E402
+
 import yaml  # noqa: E402
 
-_MANIPULATORS = Path("/efs/projects/fudi/simulation/Dexsuite/dexsuite/models/manipulators")
+# The released code: the PyPI package is built from this ref of the DexSuite repository (fetch it before generating).
+_REPO = Path("/efs/projects/fudi/simulation/Dexsuite")
+RELEASE_REF = "origin/main"
+
+
+def _release(*args):
+    return subprocess.run(["git", "-C", str(_REPO), *args], capture_output=True, text=True, check=True).stdout
 
 
 def _adapters(arm):
-    keys = set(yaml.safe_load((_MANIPULATORS / arm / f"{arm}_adapters.yaml").read_text()))
+    keys = set(yaml.safe_load(_release("show", f"{RELEASE_REF}:dexsuite/models/manipulators/{arm}/{arm}_adapters.yaml")))
     return [e["key"] for e in END_EFFECTORS if e["key"] in keys]
+
+
+# tasks of the released code; the others run from the fudi branch until they land on main
+_ENV_FILES = [f for f in _release("ls-tree", "-r", "--name-only", RELEASE_REF, "dexsuite/environments").split()
+              if f.endswith(".py") and "/prototypes/" not in f]
+RELEASED_TASKS = {m for f in _ENV_FILES for m in re.findall(r'@register_env\("([a-z0-9_]+)"\)', _release("show", f"{RELEASE_REF}:{f}"))}
+SOURCE_ONLY = {t["key"] for t in TASKS} - RELEASED_TASKS
 
 
 ADAPTERS = {a: _adapters(a) for a in [x["key"] for x in ARMS] + ["floating"]}
