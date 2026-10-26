@@ -3,11 +3,16 @@
 ## Installing
 
 **Recording fails with `ModuleNotFoundError: lerobot`.**
-Install the datasets extra, `pip install -e ".[datasets]"`. It pins LeRobot 0.4.4: the logger relies on that version's
+Install the datasets extra, `pip install "dexsuite[datasets]"`. It pins LeRobot 0.4.4: the logger relies on that version's
 dataset layout, and LeRobot 0.6 changed it.
 
-**Some robots are missing after `pip install dexsuite`.**
-Install from source with `pip install -e .`. The source checkout carries every robot and object asset.
+**Saving an episode fails with `TypeError: only 0-dimensional arrays can be converted to Python scalars`.**
+NumPy 2.4 refuses what LeRobot 0.4.4 hands to `datasets` when it writes an episode. The datasets extra pins
+`numpy<2.4`; reinstall it with `pip install "dexsuite[datasets]"`.
+
+**A prototype task or an object model is missing after `pip install dexsuite`.**
+The package ships every robot and the assets of every task. The prototype tasks and the objects no task uses yet come
+with the repository: [install from source](../get-started/installation.md#install-from-source) with `pip install -e .`.
 
 ## Making environments
 

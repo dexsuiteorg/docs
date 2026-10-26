@@ -14,9 +14,9 @@ Because every robot takes the same kind of action, a device set up for one arm w
 | Device | Drives | Typical controller | Setup |
 |---|---|---|---|
 | Keyboard | hand pose, gripper open and close | `osc_pose` | none |
-| SpaceMouse | hand pose, gripper | `osc_pose` | `pip install -e ".[spacemouse]"` |
-| Vive tracker or controller | absolute hand pose | `osc_pose_abs_quat` | SteamVR, `pip install -e ".[vive]"` |
-| Manus glove | finger joints, through GeoRT retargeting | `joint_position` (unnormalized) | Manus SDK, GeoRT, `pip install -e ".[manus]"` |
+| SpaceMouse | hand pose, gripper | `osc_pose` | `pip install "dexsuite[spacemouse]"` |
+| Vive tracker or controller | absolute hand pose | `osc_pose_abs_quat` | SteamVR, `pip install "dexsuite[vive]"` |
+| Manus glove | finger joints, through GeoRT retargeting | `joint_position` (unnormalized) | Manus SDK, GeoRT, `pip install "dexsuite[manus]"` |
 
 The Vive tracker on the wrist and the Manus glove on the hand together drive an arm and a dexterous hand at once; this
 is how the human demonstrations in the [datasets](../data/index.md) were collected.

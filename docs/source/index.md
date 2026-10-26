@@ -48,7 +48,7 @@ obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
 :::{grid-item-card} Install
 :link: get-started/installation
 :link-type: doc
-Python, Genesis and a GPU. A source install takes a few minutes.
+`pip install dexsuite`: Python, Genesis and a GPU, with every robot and task.
 :::
 
 :::{grid-item-card} Quickstart

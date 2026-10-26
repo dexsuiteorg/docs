@@ -39,7 +39,7 @@ For AZERTY keyboards, pass `mapping=MAPPING_AZERTY` from `dexsuite.devices.keybo
 ## SpaceMouse
 
 ```bash
-pip install -e ".[spacemouse]"     # evdev on Linux, hidapi elsewhere
+pip install "dexsuite[spacemouse]"     # evdev on Linux, hidapi elsewhere
 ```
 
 ```python
@@ -62,7 +62,7 @@ the pose at reset.
 ### Through SteamVR on the same machine
 
 ```bash
-pip install -e ".[vive]"     # openvr
+pip install "dexsuite[vive]"     # openvr
 ```
 
 ```python
@@ -100,7 +100,7 @@ The glove drives the fingers of a dexterous hand. The Manus SDK streams the oper
 joint angles from GeoRT over a WebSocket:
 
 ```bash
-pip install -e ".[manus]"     # websockets
+pip install "dexsuite[manus]"     # websockets
 ```
 
 ```python

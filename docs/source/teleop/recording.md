@@ -4,7 +4,7 @@
 the action, the outcome, and the robot's action layout, so a dataset can be replayed on the same robot later.</p>
 
 ```bash
-pip install -e ".[datasets]"      # LeRobot 0.4.4, the version the logger and the datasets are written with
+pip install "dexsuite[datasets]"      # LeRobot 0.4.4, the version the logger and the datasets are written with
 ```
 
 ## The logger
