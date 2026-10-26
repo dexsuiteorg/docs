@@ -9,8 +9,8 @@ Tasks (33)
 Arms and robots (17)
 : `aloha_tactile`, `floating`, `franka`, `franka_fr3`, `franka_with_gripper`, `gen3`, `gen3_lite`, `kuka`, `link6`, `lite6`, `sawyer`, `so_100`, `trossen_vx300s`, `trossen_wx250s`, `ur10`, `ur5`, `z1`
 
-End-effectors (19)
-: `ability`, `allegro`, `allegro_left`, `allegro_right`, `barrett`, `dclaw`, `franka_umi_tacticle`, `inspire`, `leap`, `leap_left`, `leap_right`, `robotiq`, `schunk`, `shadow`, `shadow_left`, `shadow_right`, `sharpa`, `sharpa_left`, `sharpa_right`
+End-effectors (20)
+: `ability`, `allegro`, `allegro_left`, `allegro_right`, `barrett`, `dclaw`, `franka_umi_tacticle`, `inspire`, `leap`, `leap_left`, `leap_right`, `robotiq`, `schunk`, `shadow`, `shadow_left`, `shadow_right`, `sharpa`, `sharpa_fardexbot`, `sharpa_left`, `sharpa_right`
 
 Controllers (7)
 : `ik_pose`, `joint_position`, `joint_torque`, `joint_velocity`, `osc_pose`, `osc_pose_abs`, `osc_pose_abs_quat`
