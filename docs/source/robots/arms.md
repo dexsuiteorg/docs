@@ -216,5 +216,5 @@ A virtual 6-DoF gantry (x, y, z, roll, pitch, yaw) with no geometry, for hand-on
 <dl class="ds-spec">
 <dt>Key</dt><dd><code>floating</code></dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
-<dt>End-effectors</dt><dd><code>sharpa</code>, <code>sharpa_right</code>, <code>sharpa_fardexbot</code>, <code>allegro</code>, <code>allegro_right</code></dd>
+<dt>End-effectors</dt><dd><code>sharpa</code>, <code>sharpa_right</code>, <code>allegro</code>, <code>allegro_right</code></dd>
 </dl>

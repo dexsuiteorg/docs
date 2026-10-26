@@ -62,7 +62,7 @@ What the task adds under `obs["state"]["other"]`, next to the robot state and th
 ```python
 import dexsuite as ds
 
-env = ds.make("pick_place_duck", manipulator="floating", gripper="sharpa_fardexbot")
+env = ds.make("pick_place_duck", manipulator="floating", gripper="sharpa")
 obs, info = env.reset(seed=0)
 obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
 ```

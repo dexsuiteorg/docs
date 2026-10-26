@@ -2,7 +2,7 @@
 """Export a task at reset (robot + every task object) for the docs renders.
 
     CUDA_VISIBLE_DEVICES=0 .venv-dexsuite/bin/python tools/export_task_scene.py --task lift --robot franka:allegro --out DIR
-    ... --robot floating:sharpa_fardexbot      (hand-only tasks)
+    ... --robot floating:sharpa      (hand-only tasks)
     ... --robot bimanual:franka:allegro_left:allegro_right   (two arms, side-by-side layout)
 
 Writes DIR/scene.json + DIR/meshes/*.glb in the format the website renderer reads (render_replay.py): one frame,

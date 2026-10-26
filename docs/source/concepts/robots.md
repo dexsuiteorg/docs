@@ -29,7 +29,7 @@ Two arms
 ```python
 ds.make("lift", manipulator="ur5", gripper="leap")                          # modular
 ds.make("lift", manipulator="trossen_vx300s")                               # integrated
-ds.make("spray_graffiti", manipulator="floating", gripper="sharpa_fardexbot")  # floating wrist
+ds.make("spray_graffiti", manipulator="floating", gripper="sharpa")  # floating wrist
 ds.make("bimanual_reach", manipulator=("ur5", "ur5"), gripper="robotiq")     # two arms
 ```
 

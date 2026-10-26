@@ -12,7 +12,7 @@ env = ds.make("lift", manipulator="ur5", gripper="allegro")
 env = ds.make("lift", manipulator="so_100")
 
 # a hand on its own, on the floating wrist
-env = ds.make("put_bread_toaster", manipulator="floating", gripper="sharpa_fardexbot")
+env = ds.make("put_bread_toaster", manipulator="floating", gripper="sharpa")
 ```
 
 How the parts are joined is described in [Robots](../concepts/robots.md). Which pairs are available is in the
