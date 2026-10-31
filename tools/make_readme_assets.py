@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Images for the DexSuite code README, in the project page's look: Inter, DexSuite blue, renders on soft cards.
 
-    /efs/projects/fudi/.venv-dexsuite/bin/python tools/make_readme_assets.py [--only hero track1 ...]
+    python tools/make_readme_assets.py [--only hero track1 ...]
 
 Writes <Dexsuite>/docs/readme/. Every image reads on GitHub's light and dark themes alike, so the README needs no
 <picture> switch: text sits inside light cards, and what sits on the page itself (stat labels, logos) is a mid grey.
@@ -25,10 +25,10 @@ from PIL import Image, ImageDraw, ImageFont
 
 DOCS = Path(__file__).resolve().parents[1]
 STATIC = DOCS / "docs/source/_static"
-SITE = Path("/efs/projects/fudi/dexsuite_website")
-PAPER = Path("/efs/projects/fudi/test_stuff/paper_ol")
-OUT = Path("/efs/projects/fudi/simulation/Dexsuite/docs/readme")
-FONTS = Path("/efs/projects/fudi/scripts/analysis/hoir_pipeline_figure/fonts")
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import DEXSUITE, FONTS, PAPER, SITE  # noqa: E402
+
+OUT = DEXSUITE / "docs/readme"
 sys.path.insert(0, str(Path(__file__).parent))
 import catalog_data as cat  # noqa: E402
 

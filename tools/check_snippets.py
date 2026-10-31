@@ -12,7 +12,10 @@ import tempfile
 import traceback
 from pathlib import Path
 
-sys.path.insert(0, "/efs/projects/fudi/simulation/Dexsuite")
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import DEXSUITE  # noqa: E402
+
+sys.path.insert(0, str(DEXSUITE))
 os.environ.setdefault("PYOPENGL_PLATFORM", "egl")
 import torch  # noqa: E402
 

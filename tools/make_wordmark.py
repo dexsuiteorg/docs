@@ -12,7 +12,12 @@ from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 from fontTools.ttLib import TTFont
 
-FONT = Path("/efs/projects/fudi/scripts/analysis/hoir_pipeline_figure/fonts/Inter-Bold.ttf")
+import sys  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import FONTS  # noqa: E402
+
+FONT = FONTS / "Inter-Bold.ttf"
 OUT = Path(__file__).resolve().parents[1] / "docs/source/_static/brand"
 TEXT, TRACK = "DexSuite", -0.05            # tracking in em, as the website h1
 

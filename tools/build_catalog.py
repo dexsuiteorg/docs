@@ -15,11 +15,12 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from paths import PAPER, SITE  # noqa: E402
 from catalog_data import ADAPTERS, ARMS, END_EFFECTORS, FLOATING, IN_PROGRESS, INTEGRATED, SOURCE_ONLY, TASKS  # noqa: E402
 
 SRC = Path(__file__).resolve().parents[1] / "docs/source"
 FACTS = Path(__file__).parent / "task_facts.json"          # tools/check_tasks.py: what each snippet really returns
-PAPER_TABLE = Path("/efs/projects/fudi/test_stuff/paper_ol/Dexsuite/imitation_results.tex")
+PAPER_TABLE = PAPER / "Dexsuite/imitation_results.tex"
 GROUPS = {"track1": ("Benchmark, Track 1", "Cross-embodiment: run with the parallel-jaw gripper and the Allegro hand."),
           "track2": ("Benchmark, Track 2", "Dexterous capability: hand-only tasks."),
           "single": ("More single-arm tasks", "Further tasks with a success check, outside the benchmark."),
@@ -141,8 +142,8 @@ def task_page(t, res):
     order = "\n".join(f"{i}. {s}" for i, s in enumerate(t["order"], 1))
     notes = "".join(f"\n```{{note}}\n{n}\n```\n" for n in t.get("notes", []))
     if t["key"] in SOURCE_ONLY:
-        notes = ("\n```{important}\nNot in the pip package yet. This task runs from the `fudi` branch of the repository:\n"
-                 "`git clone -b fudi https://github.com/anashoussaini/Dexsuite.git`, then `pip install -e .` in the clone.\n```\n"
+        notes = ("\n```{important}\nNot in the pip package yet. This task runs from a clone of the repository:\n"
+                 "`git clone https://github.com/anashoussaini/Dexsuite.git`, then `pip install -e .` in the clone.\n```\n"
                  + notes)
     return f"""---
 myst:
@@ -202,8 +203,9 @@ Pick a task by its key: `ds.make("<key>", manipulator=..., gripper=...)`. Eleven
     for g, (title, sub) in GROUPS.items():
         ts = [t for t in TASKS if t["group"] == g]
         parts.append(f'\n## {title}\n\n{sub}\n\n<div class="ds-grid wide">\n' + "\n".join(tile(t) for t in ts) + "\n</div>\n")
-    rows = "\n".join(f"| `{k}` | {d} | {why} |" for k, d, why in IN_PROGRESS)
-    parts.append(f"""
+    if IN_PROGRESS:
+        rows = "\n".join(f"| `{k}` | {d} | {why} |" for k, d, why in IN_PROGRESS)
+        parts.append(f"""
 ## In progress
 
 These tasks are registered but cannot be used from `ds.make` yet. They are listed so nobody is surprised by them.
@@ -211,8 +213,9 @@ These tasks are registered but cannot be used from `ds.make` yet. They are liste
 | Key | What it is | What is missing |
 |---|---|---|
 {rows}
-
-```{{toctree}}
+""")
+    parts.append("""
+```{toctree}
 :hidden:
 :maxdepth: 1
 
@@ -400,7 +403,7 @@ Integrated robots (`franka_with_gripper`, `aloha_tactile`, `gen3_lite`, `so_100`
 """
 
 
-MANIFEST = Path("/efs/projects/fudi/dexsuite_website/static/data_viewer/manifest.json")
+MANIFEST = SITE / "static/data_viewer/manifest.json"
 TIERS = ["Human teleoperation", "Scripted expert", "Machine-generated"]
 
 

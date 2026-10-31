@@ -11,9 +11,8 @@ That is dexsuite 0.1.0 with NumPy 2.4: LeRobot 0.4.4 hands `datasets` one-elemen
 From 0.1.1 the logger handles it; upgrade with `pip install -U "dexsuite[datasets]"`.
 
 **A task is missing after `pip install dexsuite`.**
-The package ships every robot, every benchmark task and most of the others. Tasks marked *from source* in the
-[catalog](../tasks/index.md) run from the `fudi` branch for now (`git clone -b fudi`, then `pip install -e .`). The
-prototype tasks and the objects no task uses yet come with the repository:
+The package ships every robot and every task in the [catalog](../tasks/index.md) but Close Window and Spray, whose window
+model is over PyPI's file-size limit. That task and the objects no task uses yet come with the repository:
 [install from source](../get-started/installation.md#install-from-source).
 
 ## Making environments

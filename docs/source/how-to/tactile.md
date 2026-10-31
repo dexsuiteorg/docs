@@ -8,7 +8,7 @@ penetration into nearby objects into normal and friction forces.</p>
 Pads are declared on the model class. This is the UMI gripper:
 
 ```python
-@register_gripper("franka_umi_tacticle")
+@register_gripper("umi")
 class FrankaUmiTacticle(GripperModel):
     ...
     tactile: bool = True
@@ -30,7 +30,7 @@ The pads are built with the robot; there is no switch in `ds.make`.
 ## Read them
 
 ```python
-env = ds.make("pick_place", manipulator="franka", gripper="franka_umi_tacticle")
+env = ds.make("pick_place", manipulator="franka", gripper="umi")
 obs, info = env.reset(seed=0)
 pad = obs["state"]["gripper"]["tactile"]["left_elastomer"]
 pad["force_grid"]       # (12, 32) normal force per taxel

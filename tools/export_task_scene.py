@@ -18,7 +18,10 @@ from pathlib import Path
 
 import numpy as np
 
-sys.path.insert(0, "/efs/projects/fudi/simulation/Dexsuite")
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import DEXSUITE  # noqa: E402
+
+sys.path.insert(0, str(DEXSUITE))
 os.environ.setdefault("PYOPENGL_PLATFORM", "egl")
 
 

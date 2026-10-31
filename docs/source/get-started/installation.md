@@ -25,9 +25,8 @@ robot, and the models of every benchmark task and most of the others, about 100 
 
 ## Install from source
 
-To change the code, for the prototype tasks and the full object library (the objects no task uses yet), install the
-repository in editable mode. Tasks marked *from source* in the catalog are on the `fudi` branch for now
-(`git clone -b fudi`).
+To change the code, for Close Window and Spray (its window model is over PyPI's file-size limit, so the package leaves it
+out) or for the full object library (the objects no task uses yet), install the repository in editable mode.
 
 ```bash
 git clone https://github.com/anashoussaini/Dexsuite.git

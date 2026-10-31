@@ -48,7 +48,7 @@ How the parts are joined is described in [Robots](../concepts/robots.md). Which 
 
 <div class="ds-grid">
 <a class="ds-tile" href="end-effectors.html#robotiq"><img src="../_static/catalog/ee_robotiq.webp" alt="Robotiq 2F-85" loading="lazy"><div class="ds-tile-text"><b>Robotiq 2F-85</b><small>Parallel-jaw gripper, 1 DoF</small></div></a>
-<a class="ds-tile" href="end-effectors.html#franka_umi_tacticle"><img src="../_static/catalog/ee_franka_umi_tacticle.webp" alt="UMI gripper" loading="lazy"><div class="ds-tile-text"><b>UMI gripper</b><small>Parallel-jaw gripper with tactile pads, 2 DoF</small></div></a>
+<a class="ds-tile" href="end-effectors.html#umi"><img src="../_static/catalog/ee_umi.webp" alt="UMI gripper" loading="lazy"><div class="ds-tile-text"><b>UMI gripper</b><small>Parallel-jaw gripper with tactile pads, 2 DoF</small></div></a>
 <a class="ds-tile" href="end-effectors.html#barrett"><img src="../_static/catalog/ee_barrett.webp" alt="BarrettHand" loading="lazy"><div class="ds-tile-text"><b>BarrettHand</b><small>Three-finger hand, 8 DoF</small></div></a>
 <a class="ds-tile" href="end-effectors.html#dclaw"><img src="../_static/catalog/ee_dclaw.webp" alt="D&#x27;Claw" loading="lazy"><div class="ds-tile-text"><b>D&#x27;Claw</b><small>Three-finger hand, 9 DoF</small></div></a>
 <a class="ds-tile" href="end-effectors.html#inspire"><img src="../_static/catalog/ee_inspire.webp" alt="Inspire Hand" loading="lazy"><div class="ds-tile-text"><b>Inspire Hand</b><small>Five-finger hand, 6 DoF</small></div></a>

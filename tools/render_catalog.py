@@ -26,12 +26,16 @@ import numpy as np
 from PIL import Image
 
 DOCS = Path(__file__).resolve().parents[1]
-SITE = Path("/efs/projects/fudi/dexsuite_website/v2")
-ROBOTS = [Path("/efs/projects/fudi/runs/docs_catalog/exports"), SITE / "work/robots"]   # first match wins
+import sys  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import BLENDER_PY, SITE as _SITE, WORK as _WORK  # noqa: E402
+
+SITE = _SITE / "v2"
+ROBOTS = [_WORK / "docs_catalog/exports", SITE / "work/robots"]   # first match wins
 RENDER = SITE / "tools/render_replay.py"
-BLENDER_PY = "/tmp/hoirfig/bpyenv/bin/python"
 OUT = DOCS / "docs/source/_static/catalog"
-WORK = Path("/efs/projects/fudi/runs/docs_catalog")
+WORK = _WORK / "docs_catalog"
 GRAPHITE = {"color": "#2b2d32", "rough": 0.42, "coat": 0.25}
 LIGHTS = [  # same as the project page robot stills
     {"type": "AREA", "energy": 520, "size": 3.5, "loc": [0.9, -1.3, 3.4], "target": [0.3, 0, 0.3]},

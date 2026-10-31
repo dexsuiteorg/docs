@@ -16,7 +16,7 @@ orientation as a quaternion `(w, x, y, z)`, and two gripper values.
 
 | Option | Default | Meaning |
 |---|---|---|
-| `--manipulator`, `--gripper` | `franka`, `franka_umi_tacticle` | robot |
+| `--manipulator`, `--gripper` | `franka`, `umi` | robot |
 | `--episodes` | 10 | successful episodes to collect |
 | `--max-attempts` | | stop after this many tries |
 | `--max-steps` | 800 | step limit per episode |

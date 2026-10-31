@@ -6,7 +6,7 @@ and fits lens and shift), then the alpha is faded near the edges so no shadow en
 
     .venv-dexsuite/bin/python tools/render_tasks.py [--only lift stack ...] [--gpu 0]
 
-Reads runs/docs_tasks/<task>/scene.json (tools/export_task_scene.py); writes docs/source/_static/tasks/<task>.webp.
+Reads <docs_work>/docs_tasks/<task>/scene.json (tools/export_task_scene.py); writes docs/source/_static/tasks/<task>.webp.
 """
 from __future__ import annotations
 
@@ -22,13 +22,13 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).parent))
+from paths import BLENDER_PY, SITE, WORK as _WORK  # noqa: E402
 from catalog_data import TASKS  # noqa: E402
 
 DOCS = Path(__file__).resolve().parents[1]
-SCENES = Path("/efs/projects/fudi/runs/docs_tasks")
-WORK = Path("/efs/projects/fudi/runs/docs_task_renders")
-RENDER = Path("/efs/projects/fudi/dexsuite_website/v2/tools/render_replay.py")
-BLENDER_PY = "/tmp/hoirfig/bpyenv/bin/python"
+SCENES = _WORK / "docs_tasks"
+WORK = _WORK / "docs_task_renders"
+RENDER = SITE / "v2/tools/render_replay.py"
 OUT = DOCS / "docs/source/_static/tasks"
 W, H = 1280, 800
 GRAPHITE = {"color": "#2b2d32", "rough": 0.42, "coat": 0.25}
@@ -83,7 +83,7 @@ def edge_fade(im, band=0.07):
     return im
 
 
-HERO = Path("/efs/projects/fudi/dexsuite_website/v2/work/frames/hero_scene/f0000.png")
+HERO = SITE / "v2/work/frames/hero_scene/f0000.png"
 
 
 def from_hero():

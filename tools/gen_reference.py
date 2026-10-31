@@ -12,7 +12,10 @@ import re
 import sys
 from pathlib import Path
 
-REPO = Path(sys.argv[1] if len(sys.argv) > 1 else "/efs/projects/fudi/simulation/Dexsuite")
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import DEXSUITE  # noqa: E402
+
+REPO = Path(sys.argv[1]) if len(sys.argv) > 1 else DEXSUITE
 PKG = REPO / "dexsuite"
 OUT = Path(__file__).resolve().parents[1] / "docs/source/reference"
 CLASSES = [("sim.py", "SimOptions"), ("robot.py", "RobotOptions"), ("robot.py", "ArmOptions"), ("robot.py", "ControllerOptions"),

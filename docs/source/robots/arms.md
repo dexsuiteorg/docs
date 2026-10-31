@@ -15,7 +15,7 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>panda_nohand.xml</code>, license Apache-2.0 (MuJoCo Menagerie)</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
 </dl>
 
 (franka_fr3)=
@@ -28,7 +28,7 @@
 <dt>Maker</dt><dd>Franka Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>fr3.xml</code>, license Apache-2.0</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `franka_umi_tacticle`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`, `shadow`</dd>
 </dl>
 
 (gen3)=
@@ -41,7 +41,7 @@
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>gen3.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (kuka)=
@@ -54,7 +54,7 @@
 <dt>Maker</dt><dd>KUKA</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>iiwa14.xml</code>, license BSD-3 (Drake)</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (sawyer)=
@@ -67,7 +67,7 @@
 <dt>Maker</dt><dd>Rethink Robotics</dd>
 <dt>Degrees of freedom</dt><dd>7</dd>
 <dt>Model</dt><dd><code>sawyer.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (ur5)=
@@ -80,7 +80,7 @@
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur5e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `leap`</dd>
 </dl>
 
 (ur10)=
@@ -93,7 +93,7 @@
 <dt>Maker</dt><dd>Universal Robots</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>ur10e.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (lite6)=
@@ -106,7 +106,7 @@
 <dt>Maker</dt><dd>UFactory</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>lite6.xml</code>, license BSD-style</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (link6)=
@@ -119,7 +119,7 @@
 <dt>Maker</dt><dd>Kinova</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>link6_best.xml</code>, license BSD-3</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 (z1)=
@@ -132,7 +132,7 @@
 <dt>Maker</dt><dd>Unitree</dd>
 <dt>Degrees of freedom</dt><dd>6</dd>
 <dt>Model</dt><dd><code>z1.xml</code>, license not stated</dd>
-<dt>End-effectors</dt><dd>`robotiq`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
+<dt>End-effectors</dt><dd>`robotiq`, `umi`, `barrett`, `dclaw`, `inspire`, `ability`, `schunk`, `allegro`, `shadow`</dd>
 </dl>
 
 ## Integrated robots

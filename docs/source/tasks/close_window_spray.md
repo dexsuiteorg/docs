@@ -74,8 +74,8 @@ obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
 ```
 
 ```{important}
-Not in the pip package yet. This task runs from the `fudi` branch of the repository:
-`git clone -b fudi https://github.com/anashoussaini/Dexsuite.git`, then `pip install -e .` in the clone.
+Not in the pip package yet. This task runs from a clone of the repository:
+`git clone https://github.com/anashoussaini/Dexsuite.git`, then `pip install -e .` in the clone.
 ```
 
 ```{note}

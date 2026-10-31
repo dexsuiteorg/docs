@@ -17,19 +17,19 @@ joint, so the gripper part of the action has one entry per actuated degree of fr
 <dt>Model license</dt><dd>BSD-2</dd>
 </dl>
 
-(franka_umi_tacticle)=
+(umi)=
 ## UMI gripper
 
-<img class="ds-render" style="max-width:340px" src="../_static/catalog/ee_franka_umi_tacticle.webp" alt="UMI gripper">
+<img class="ds-render" style="max-width:340px" src="../_static/catalog/ee_umi.webp" alt="UMI gripper">
 
 <dl class="ds-spec">
-<dt>Key</dt><dd><code>franka_umi_tacticle</code></dd>
+<dt>Key</dt><dd><code>umi</code></dd>
 <dt>Type</dt><dd>Parallel-jaw gripper with tactile pads</dd>
 <dt>Actuated DoF</dt><dd>2</dd>
 <dt>Fingers</dt><dd>2</dd>
 <dt>Tactile</dt><dd>pads on both fingers</dd>
-<dt>Mounts on</dt><dd><code>franka</code>, <code>franka_fr3</code></dd>
-<dt>Model license</dt><dd>not stated</dd>
+<dt>Mounts on</dt><dd><code>franka</code>, <code>franka_fr3</code>, <code>gen3</code>, <code>kuka</code>, <code>sawyer</code>, <code>ur5</code>, <code>ur10</code>, <code>lite6</code>, <code>link6</code>, <code>z1</code></dd>
+<dt>Model license</dt><dd>MIT (fingers and pads), Apache-2.0 (Franka hand body)</dd>
 </dl>
 
 (barrett)=

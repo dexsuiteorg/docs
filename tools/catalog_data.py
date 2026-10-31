@@ -1,9 +1,13 @@
-"""Catalog facts for the docs, read from the DexSuite code (branch fudi). tools/build_catalog.py turns this into pages.
+"""Catalog facts for the docs, read from the DexSuite code (paths.DEXSUITE). tools/build_catalog.py turns this into pages.
 
 Every value here was read from the task, model and adapter files; file references are kept next to each entry so the
 next person can re-check them. Randomization ranges are given only where they were verified line by line.
 """
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from paths import DEXSUITE  # noqa: E402
 
 TASKS = [
     # ---- Track 1 (benchmark): gripper and Allegro hand --------------------------------------------------------------
@@ -164,17 +168,39 @@ TASKS = [
          file="dexsuite/environments/bimanual/rigid/bimanual_pick_place_mug.py", horizon=40000,
          goal="Put the mug into the dish rack with two arms.", objects=["mug", "dish rack"], order=["Grasp the mug", "Place it in the rack"],
          success="Mug within the rack footprint and height, nearly at rest.", failure="None."),
+    dict(key="bimanual_pick_place_pan", name="Bimanual Move Pan", group="bimanual",
+         robot="bimanual:franka:allegro_left:allegro_right", physics="rigid",
+         file="dexsuite/environments/bimanual/rigid/bimanual_pick_place_pan.py", horizon=700,
+         goal="Move a frying pan from a burner on the hot plate onto the kitchen mat with two arms.", objects=['frying pan', 'hot plate', 'kitchen mat'],
+         order=['Grasp the pan', 'Carry it onto the mat'],
+         success="No success check yet: the episode runs to the horizon.", failure="None."),
+    dict(key="bimanual_pick_place_pot", name="Bimanual Move Pot", group="bimanual",
+         robot="bimanual:franka:allegro_left:allegro_right", physics="rigid",
+         file="dexsuite/environments/bimanual/rigid/bimanual_pick_place_pot.py", horizon=7000,
+         goal="Lift a pot from a burner on the hot plate and place it on the kitchen mat with both arms.", objects=['pot', 'hot plate', 'kitchen mat'],
+         order=['Grasp the pot with both hands', 'Carry it onto the mat'],
+         success="No success check yet: the episode runs to the horizon.", failure="None."),
+    dict(key="bimanual_make_coffee", name="Bimanual Make Coffee", group="bimanual",
+         robot="bimanual:franka:allegro_left:allegro_right", physics="rigid",
+         file="dexsuite/environments/bimanual/rigid/bimanual_make_coffee.py", horizon=1000,
+         goal="Place the mug on the tray of a fixed coffee machine with two arms.", objects=['mug', 'coffee machine'],
+         order=['Grasp the mug', 'Set it on the tray'],
+         success="No success check yet: the episode runs to the horizon.", failure="None."),
+    dict(key="bimanual_drill_to_point", name="Bimanual Drill to Point", group="bimanual",
+         robot="bimanual:franka:allegro_left:allegro_right", physics="rigid",
+         file="dexsuite/environments/bimanual/rigid/bimanual_drill_to_point.py", horizon=30000,
+         goal="Bring a power drill's tip to a target marker on a wooden wall with two arms.", objects=['power drill', 'wall with a target'],
+         order=['Grasp the drill', 'Bring the tip to the target'],
+         success="No success check yet: the episode runs to the horizon.", failure="None."),
+    dict(key="bimanual_fold_glasses", name="Bimanual Fold Glasses", group="bimanual",
+         robot="bimanual:franka:allegro_left:allegro_right", physics="articulated",
+         file="dexsuite/environments/bimanual/rigid/bimanual_fold_glasses.py", horizon=40000,
+         goal="Fold a pair of articulated glasses resting on a tray with two arms.", objects=['glasses (two hinges)', 'tray'],
+         order=['Fold one temple', 'Fold the other'],
+         success="No success check yet: the episode runs to the horizon.", failure="None."),
 ]
 
-IN_PROGRESS = [  # registered but not yet usable from ds.make; listed so nobody is surprised
-    ("cut_butter", "MPM butter cutting", "reset hook signature"), ("spready_butter", "MPM butter spreading", "reset hook signature"),
-    ("mpm_sponge_drop", "MPM sponge", "legacy constructor"), ("foldshirt", "cloth folding", "legacy constructor, missing mesh"),
-    ("pour_water", "SPH fluid pouring", "legacy constructor"), ("open_jar", "articulated jar", "legacy constructor, missing asset"),
-    ("cable_routing", "rigid cable through clips", "no success check yet"), ("rotateDice", "in-hand dice rotation", "no success check yet"),
-    ("bimanual_drill_to_point", "two-arm drilling", "no success check yet"), ("bimanual_fold_glasses", "fold glasses", "no success check yet"),
-    ("bimanual_make_coffee", "two-arm coffee", "no success check yet"), ("bimanual_pick_place_pan", "two-arm pan", "no success check yet"),
-    ("bimanual_pick_place_pot", "two-arm pot", "no success check yet"),
-]
+IN_PROGRESS = []  # registered tasks that ds.make cannot build yet (none)
 
 ARMS = [  # modular: take any end-effector that has an adapter for them
     dict(key="franka", name="Franka Panda", maker="Franka Robotics", dof=7, asset="panda_nohand.xml", license="Apache-2.0 (MuJoCo Menagerie)"),
@@ -204,8 +230,8 @@ FLOATING = dict(key="floating", name="Floating wrist", dof=6,
 
 END_EFFECTORS = [
     dict(key="robotiq", name="Robotiq 2F-85", kind="Parallel-jaw gripper", dof=1, fingers=2, license="BSD-2"),
-    dict(key="franka_umi_tacticle", name="UMI gripper", kind="Parallel-jaw gripper with tactile pads", dof=2, fingers=2,
-         tactile=True, license="not stated"),
+    dict(key="umi", name="UMI gripper", kind="Parallel-jaw gripper with tactile pads", dof=2, fingers=2,
+         tactile=True, license="MIT (fingers and pads), Apache-2.0 (Franka hand body)"),
     dict(key="barrett", name="BarrettHand", kind="Three-finger hand", dof=8, fingers=3, license="BSD-style"),
     dict(key="dclaw", name="D'Claw", kind="Three-finger hand", dof=9, fingers=3, license="Apache-2.0 (ROBEL)"),
     dict(key="inspire", name="Inspire Hand", kind="Five-finger hand", dof=6, fingers=5, license="not stated (dex_urdf)"),
@@ -225,25 +251,25 @@ import subprocess  # noqa: E402
 
 import yaml  # noqa: E402
 
-# The released code: the PyPI package is built from this ref of the DexSuite repository (fetch it before generating).
-_REPO = Path("/efs/projects/fudi/simulation/Dexsuite")
-RELEASE_REF = "origin/main"
+# The released code: the DexSuite repository the PyPI package is built from (paths.DEXSUITE, a checkout of main).
+_REPO = DEXSUITE
 
 
-def _release(*args):
-    return subprocess.run(["git", "-C", str(_REPO), *args], capture_output=True, text=True, check=True).stdout
+def _read(rel):
+    return (_REPO / rel).read_text()
 
 
 def _adapters(arm):
-    keys = set(yaml.safe_load(_release("show", f"{RELEASE_REF}:dexsuite/models/manipulators/{arm}/{arm}_adapters.yaml")))
+    keys = set(yaml.safe_load(_read(f"dexsuite/models/manipulators/{arm}/{arm}_adapters.yaml")))
     return [e["key"] for e in END_EFFECTORS if e["key"] in keys]
 
 
-# tasks of the released code; the others run from the fudi branch until they land on main
-_ENV_FILES = [f for f in _release("ls-tree", "-r", "--name-only", RELEASE_REF, "dexsuite/environments").split()
-              if f.endswith(".py") and "/prototypes/" not in f]
-RELEASED_TASKS = {m for f in _ENV_FILES for m in re.findall(r'@register_env\("([a-z0-9_]+)"\)', _release("show", f"{RELEASE_REF}:{f}"))}
-SOURCE_ONLY = {t["key"] for t in TASKS} - RELEASED_TASKS
+# tasks of the released code
+_ENV_FILES = [str(p.relative_to(_REPO)) for p in sorted((_REPO / "dexsuite/environments").rglob("*.py"))]
+RELEASED_TASKS = {m for f in _ENV_FILES for m in re.findall(r'@register_env\("([a-z0-9_]+)"\)', _read(f))}
+# in the code but not in the pip package: the window model alone would take the wheel over PyPI's 100 MB file limit
+PIP_MISSING = {"close_window_spray"}
+SOURCE_ONLY = ({t["key"] for t in TASKS} - RELEASED_TASKS) | PIP_MISSING
 
 
 ADAPTERS = {a: _adapters(a) for a in [x["key"] for x in ARMS] + ["floating"]}

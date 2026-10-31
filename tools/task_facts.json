@@ -1,4 +1,66 @@
 {
+ "bimanual_drill_to_point": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {},
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_fold_glasses": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "glasses_pos": [
+    3
+   ],
+   "hinge_angles": [
+    2
+   ],
+   "tray_top_z": [
+    1
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
  "bimanual_lift": {
   "action_dim": 44,
   "cameras": {
@@ -38,6 +100,51 @@
    ],
    "target_right_pos": [
     3
+   ]
+  },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_make_coffee": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {
+   "machine_pos": [
+    3
+   ],
+   "machine_quat": [
+    4
+   ],
+   "mug_pos": [
+    3
+   ],
+   "mug_quat": [
+    4
+   ],
+   "mug_target_pos": [
+    3
+   ],
+   "mug_target_quat": [
+    4
    ]
   },
   "reward_shape": [
@@ -130,6 +237,58 @@
     4
    ]
   },
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_pick_place_pan": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {},
+  "reward_shape": [
+   1
+  ]
+ },
+ "bimanual_pick_place_pot": {
+  "action_dim": 44,
+  "cameras": {
+   "front": [
+    "rgb"
+   ],
+   "left_wrist": [
+    "rgb"
+   ],
+   "right_wrist": [
+    "rgb"
+   ]
+  },
+  "info": [
+   "episode",
+   "failure",
+   "needs_reset",
+   "success",
+   "terminated",
+   "truncated"
+  ],
+  "other": {},
   "reward_shape": [
    1
   ]
@@ -463,7 +622,9 @@
     3
    ]
   },
-  "reward_shape": []
+  "reward_shape": [
+   1
+  ]
  },
  "make_coffee": {
   "action_dim": 22,
